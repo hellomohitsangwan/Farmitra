@@ -38,7 +38,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @desc  Edit single product
 // @route PUT /api/products/:id
 // @access Admin protected
-const createProduct = asyncHandler(async (req, res) => {
+const updateProduct = asyncHandler(async (req, res) => {
   const { name, price, description, image, brand, category, countInStock } =
     req.Body;
   const product = await Product.findById(req.params.id);
@@ -60,4 +60,4 @@ const createProduct = asyncHandler(async (req, res) => {
   }
 });
 
-export { getProducts, getProductById, deleteProduct, createProduct };
+export { getProducts, getProductById, deleteProduct, updateProduct };

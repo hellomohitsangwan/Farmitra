@@ -60,4 +60,23 @@ const updateProduct = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc  Create single product
+// @route PUT /api/products
+// @access Admin protected
+const createProduct = asyncHandler(async (req, res) => {
+  const product = new Product({
+    name: "sample name",
+    price: 10,
+    user: res.user._id,
+    image: "/images/sample.jpeg",
+    brand: "samle brand",
+    category: "samle category",
+    countInStock: 2,
+    numReviews: 0,
+    description: "sample description",
+  });
+  const createdProduct = await Product.save();
+  res.json(createdProduct);
+});
+
 export { getProducts, getProductById, deleteProduct, updateProduct };

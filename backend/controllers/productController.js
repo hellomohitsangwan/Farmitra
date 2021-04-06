@@ -52,8 +52,8 @@ const updateProduct = asyncHandler(async (req, res) => {
     product.image = image;
     product.brand = brand;
 
-    const createdProduct = Product.save();
-    res.status(201).json(product);
+    const updatedProduct = Product.save();
+    res.status(201).json(updatedProduct);
   } else {
     res.status(404);
     throw new Error("product not found");

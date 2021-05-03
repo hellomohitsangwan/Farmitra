@@ -37,7 +37,7 @@ const PaymentScreen = ({ history }) => {
           <Col>
             <Form.Check
               type="radio"
-              label="PayPal or Credit Card"
+              label="Razor pay/new banking"
               id="PayPal"
               name="paymentMethod"
               value="razorpay"

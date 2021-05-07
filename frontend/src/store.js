@@ -36,7 +36,7 @@ const reducer = combineReducers({
   orderMyList: orderListMyReducer,
   userList: userListReducer,
   userDelete: userDeleteReducer,
-  userupdate: userUpdateReducer,
+  userUpdate: userUpdateReducer,
 });
 const cartItemsFromState = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))

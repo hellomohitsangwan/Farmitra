@@ -3,7 +3,7 @@ import { CART_ADD_ITEM } from "../constants/cartConstatnts";
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
   //getState is just toState of whatever reducer we want preset in our state
-  const { data } = axios.get(`/api/products/${id}`);
+  const { data } = await axios.get(`/api/products/${id}`);
   dispatch({
     type: CART_ADD_ITEM,
     payload: {
@@ -15,5 +15,5 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
       qty,
     },
   });
-  localStorage.setItem("cartItems", JSON.stringfy(getState().cart.cartItems));
+  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 };

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { CART_ADD_ITEM } from "../constants/cartConstatnts";
+import { CART_ADD_ITEM, CART_DELETE_ITEM } from "../constants/cartConstatnts";
 
 export const addToCart = (id, qty) => async (dispatch, getState) => {
   //getState is just toState of whatever reducer we want preset in our state
@@ -14,6 +14,13 @@ export const addToCart = (id, qty) => async (dispatch, getState) => {
       countInStock: data.countInStock,
       qty,
     },
+  });
+  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+};
+export const removeFromCart = (id) => async (dispatch, getState) => {
+  dispatch({
+    type: CART_DELETE_ITEM,
+    payload: id,
   });
   localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
 };

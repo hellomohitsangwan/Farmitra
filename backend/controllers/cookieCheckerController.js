@@ -1,10 +1,16 @@
 import asyncHandler from "express-async-handler";
-
+import User from "../models/userModel.js";
 export const checkToken = asyncHandler(async (req, res) => {
-  if (req.token) {
+  const user = await User.findById(req.user._id);
+
+  if (user && req.token) {
     res.json({
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      token: req.token,
       isToken: true,
-      jwtToken: req.token,
     });
   } else {
     res.json({

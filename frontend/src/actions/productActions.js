@@ -19,7 +19,6 @@ export const listProducts = () => async (dispatch) => {
       return;
     }
     dispatch({ type: PRODUCT_LIST_SUCCESS, payload: res.data });
-    console.log(res);
   } catch (err) {
     dispatch({
       type: PRODUCT_LIST_FAIL,
@@ -29,12 +28,6 @@ export const listProducts = () => async (dispatch) => {
           : err.response && err.response.status !== 500
           ? err.response.data.message
           : "check your network connection",
-      // credits < 30 ? "freshman" : credits <= 59 ? "sophomore"
-      // err.response && err.response.data.message
-      //   ? err.response.data.message
-      //   : "check your network connection"
-      //   ? err.response.status === 500
-      //   : "check your network connection",
     });
   }
 };

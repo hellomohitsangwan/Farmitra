@@ -14,7 +14,7 @@ import {
 import Message from "../components/Message";
 
 const CartScreen = ({ match, location, history }) => {
-  //macth is to get routes in linked
+  //match is to get routes in linked
   //location is to get query params in link
   //history is to redirect to a link
   const productId = match.params.id;

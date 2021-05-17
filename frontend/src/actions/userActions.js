@@ -8,7 +8,7 @@ import {
 
 export const login = (email, password) => async (dispatch) => {
   try {
-    dispatch(USER_LOGIN_REQUEST);
+    dispatch({ type: USER_LOGIN_REQUEST });
     const config = {
       headers: {
         "content-type": "application/json",
@@ -25,7 +25,7 @@ export const login = (email, password) => async (dispatch) => {
       payload: data,
     });
 
-    localStorage.setItem("userInfo", JSON.stringify(data));
+    // localStorage.setItem("userInfo", JSON.stringify(data));
   } catch (err) {
     dispatch({
       type: USER_LOGIN_FAIL,
@@ -34,5 +34,6 @@ export const login = (email, password) => async (dispatch) => {
           ? err.response.data.message
           : err.message,
     });
+    console.log(err);
   }
 };

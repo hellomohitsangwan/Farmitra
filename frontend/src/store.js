@@ -7,7 +7,8 @@ import {
 } from "./reducers/productListReducers";
 import { cartReducer } from "./reducers/cartReducers";
 import { userLoginReducer } from "./reducers/userReducers";
-import axios from "axios";
+// import axios from "axios";
+// import { useEffect } from "react";
 
 const reducer = combineReducers({
   productList: productListReducer,
@@ -21,17 +22,26 @@ const cartItemsFromState = localStorage.getItem("cartItems")
 // const userInfoFromState = localStorage.getItem("userInfo")
 //   ? JSON.parse(localStorage.getItem("userInfo"))
 //   : null;
-var userInfoFromState;
-const getUserDetails = async () => {
-  const res = await axios.get("/api/gettokenstatus");
-  if (res.status === 200) {
-    userInfoFromState = res.body;
-  }
-};
-getUserDetails();
+// var userInfoFromState;
+// const getUserDetails = async () => {
+//   const res = await axios.get("/api/gettokenstatus");
+//   if (res.status === 200) {
+//     userInfoFromState = res.body;
+//   }
+// };
+
+// // useEffect(() => {
+// //   getUserDetails()
+// // } , [])
+
+// getUserDetails();
 const initialState = {
   cart: { cartItems: cartItemsFromState },
-  userLogin: { userInfo: userInfoFromState },
+  // userLogin: { userInfo: async () => {
+  //   const res = await axios.get("/api/gettokenstatus");
+  //   if (res.status === 200) {
+  //     userInfo = res.body;
+  //   } }
 };
 
 const middleware = [thunk];

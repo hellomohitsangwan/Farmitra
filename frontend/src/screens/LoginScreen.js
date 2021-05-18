@@ -6,7 +6,6 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { login } from "../actions/userActions";
 import FormContainer from "../components/FormContainer";
-import axios from "axios";
 
 const LoginScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -16,16 +15,7 @@ const LoginScreen = ({ location, history }) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { loading, error, userInfo } = userLogin;
 
-  // export const userInfoFromState = null;
-  // const getUserDetails = async () => {
-  //   const res = await axios.get("/api/gettokenstatus");
-  //   if (res.status === 200) {
-  //     userInfoFromState = res.body;
-  //   }
-  // };
-
   useEffect(() => {
-    // getUserDetails();
     if (userInfo) {
       history.push(redirect);
     }
@@ -79,4 +69,3 @@ const LoginScreen = ({ location, history }) => {
 };
 
 export default LoginScreen;
-// export {userInfoFromState , LoginScreen}

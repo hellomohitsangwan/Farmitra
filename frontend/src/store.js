@@ -6,7 +6,7 @@ import {
   productDetailReducer,
 } from "./reducers/productListReducers";
 import { cartReducer } from "./reducers/cartReducers";
-import { userLoginReducer } from "./reducers/userReducers";
+import { userLoginReducer, userRegisterReducer } from "./reducers/userReducers";
 // import axios from "axios";
 // import { useEffect } from "react";
 
@@ -15,6 +15,7 @@ const reducer = combineReducers({
   productDetails: productDetailReducer,
   cart: cartReducer,
   userLogin: userLoginReducer,
+  userRegister: userRegisterReducer,
 });
 const cartItemsFromState = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))

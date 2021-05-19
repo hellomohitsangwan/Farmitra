@@ -37,3 +37,6 @@ export const login = (email, password) => async (dispatch) => {
     console.log(err);
   }
 };
+export const logout = () => (dispatch) => {
+  dispatch({ type: USER_LOGOUT });
+};

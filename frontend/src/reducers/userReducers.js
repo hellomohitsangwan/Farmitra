@@ -31,6 +31,9 @@ export const userRegisterReducer = (state = {}, action) => {
       return { loading: false, userInfo: action.payload };
     case USER_REGISTER_FAIL:
       return { loading: false, error: action.payload };
+    //exp. to fix a bug
+    case "USER_REGISTER_INFO_REMOVE":
+      return {};
     default:
       return state;
   }

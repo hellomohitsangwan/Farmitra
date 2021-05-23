@@ -6,14 +6,14 @@ import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 
-import cookieVerifyRoute from "./routes/cookieVerifyRoute.js";
-import cookieParser from "cookie-parser";
+// import cookieVerifyRoute from "./routes/cookieVerifyRoute.js";
+// import cookieParser from "cookie-parser";
 
 dotenv.config();
 const app = express();
 app.use(express.json());
 
-app.use(cookieParser());
+// app.use(cookieParser());
 
 connectDB();
 app.get("/", (req, res) => {
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
 });
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
-app.use("/api", cookieVerifyRoute);
+// app.use("/api", cookieVerifyRoute);
 //middleware routes
 app.use(notFound);
 app.use(errorHandler);

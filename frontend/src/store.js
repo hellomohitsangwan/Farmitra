@@ -34,10 +34,6 @@ const cartItemsFromState = localStorage.getItem("cartItems")
 //   }
 // };
 
-// // useEffect(() => {
-// //   getUserDetails()
-// // } , [])
-
 // getUserDetails();
 const initialState = {
   cart: { cartItems: cartItemsFromState },

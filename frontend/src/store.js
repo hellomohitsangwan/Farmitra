@@ -25,6 +25,9 @@ const reducer = combineReducers({
 const cartItemsFromState = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))
   : [];
+const shippingAddressFromStorage = localStorage.getItem("shippngAddress")
+  ? JSON.parse(localStorage.getItem("shippingAddress"))
+  : null;
 // const userInfoFromState = localStorage.getItem("userInfo")
 //   ? JSON.parse(localStorage.getItem("userInfo"))
 //   : null;
@@ -38,7 +41,10 @@ const cartItemsFromState = localStorage.getItem("cartItems")
 
 // getUserDetails();
 const initialState = {
-  cart: { cartItems: cartItemsFromState },
+  cart: {
+    cartItems: cartItemsFromState,
+    shippingAddress: shippingAddressFromStorage,
+  },
   // userLogin: { userInfo: async () => {
   //   const res = await axios.get("/api/gettokenstatus");
   //   if (res.status === 200) {

@@ -4,7 +4,7 @@ import { Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import { getUserDetails } from "../actions/userActions";
+import { getUserDetails, updateUserProflile } from "../actions/userActions";
 
 const ProfileScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -19,6 +19,10 @@ const ProfileScreen = ({ location, history }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfie);
+  const { success } = userUpdateProfile;
+  const loading2 = userUpdateProfile.loading;
 
   useEffect(() => {
     if (!userInfo) {
@@ -41,6 +45,7 @@ const ProfileScreen = ({ location, history }) => {
       setMessage("password do not match");
     } else {
       //dispatch updateuser details
+      dispatch(updateUserProflile({ id: user._id, name, email, password }));
     }
     //dispatch login
   };
@@ -50,7 +55,9 @@ const ProfileScreen = ({ location, history }) => {
         <h2>User Profile</h2>
         {message && <Message variant="danger" children={message} />}
         {error && <Message variant="danger" children={error} />}
+        {success && <Message variant="success" children={"profile updated"} />}
         {loading && <Loader />}
+        {loading2 && <Loader />}
         <Form onSubmit={submitHandler}>
           <Form.Group controlId="name">
             <Form.Label>name</Form.Label>

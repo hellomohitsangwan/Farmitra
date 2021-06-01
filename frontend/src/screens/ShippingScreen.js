@@ -14,7 +14,6 @@ const ShippingScreen = ({ history }) => {
   const [country, setCountry] = useState("");
 
   const dispatch = useDispatch();
-
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 

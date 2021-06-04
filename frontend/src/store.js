@@ -22,7 +22,7 @@ const reducer = combineReducers({
   userRegister: userRegisterReducer,
   userDetails: userDetailReducer,
   userUpdateProfie: userupdateProfileReducer,
-  ordeCreate: ordeCreateReducer,
+  orderCreate: ordeCreateReducer,
 });
 const cartItemsFromState = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))

@@ -101,6 +101,7 @@ const OrderScreen = ({ match, history }) => {
             <ListGroup.Item>
               <h2>Shipping</h2>
               <p>
+                {/* //instead of order.user.name i'm using userInfo.name bec. of some error */}
                 <strong>Name: </strong> {userInfo.name}
               </p>
               <p>

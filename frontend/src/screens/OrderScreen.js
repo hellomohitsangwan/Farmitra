@@ -2,7 +2,15 @@ import React, { useState, useEffect } from "react";
 // import axios from "axios";
 // import { PayPalButton } from "react-paypal-button-v2";
 import { Link } from "react-router-dom";
-import { Row, Col, ListGroup, Image, Card, Button } from "react-bootstrap";
+import {
+  Row,
+  Col,
+  ListGroup,
+  Image,
+  Card,
+  Button,
+  useAccordionToggle,
+} from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -77,7 +85,7 @@ const OrderScreen = ({ match, history }) => {
     //     setSdkReady(true);
     //   }
     // }
-  }, []);
+  }, [dispatch, orderId]);
 
   //   const successPaymentHandler = (paymentResult) => {
   //     console.log(paymentResult);

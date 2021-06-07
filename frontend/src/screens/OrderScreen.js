@@ -43,16 +43,16 @@ const OrderScreen = ({ match, history }) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  //   if (!loading) {
-  //     //   Calculate prices
-  //     const addDecimals = (num) => {
-  //       return (Math.round(num * 100) / 100).toFixed(2);
-  //     };
+  if (!loading) {
+    //   Calculate prices
+    const addDecimals = (num) => {
+      return (Math.round(num * 100) / 100).toFixed(2);
+    };
 
-  //     order.itemsPrice = addDecimals(
-  //       order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
-  //     );
-  //   }
+    order.itemsPrice = addDecimals(
+      order.orderItems.reduce((acc, item) => acc + item.price * item.qty, 0)
+    );
+  }
 
   useEffect(() => {
     if (!userInfo) {

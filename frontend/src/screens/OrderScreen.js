@@ -43,8 +43,9 @@ const OrderScreen = ({ match, history }) => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  if (!loading) {
+  if (!loading && order) {
     //   Calculate prices
+    console.log(order);
     const addDecimals = (num) => {
       return (Math.round(num * 100) / 100).toFixed(2);
     };
@@ -59,7 +60,7 @@ const OrderScreen = ({ match, history }) => {
       history.push("/login");
     }
     console.log(orderId);
-    // console.log(order.user);
+    // console.log(order);
     dispatch(getOrderDetails(orderId));
 
     // const addPayPalScript = async () => {

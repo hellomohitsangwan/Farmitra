@@ -38,6 +38,7 @@ export const cartReducer = (
       return {
         ...state,
         shippingAddress: action.payload,
+        isEmpty: "no",
       };
     case CART_SAVE_PAYMENT_METHOD:
       return {

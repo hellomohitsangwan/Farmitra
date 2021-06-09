@@ -6,18 +6,15 @@ import { savePaymentMethod } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
 const PaymentScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart);
-  const { shippingAddress } = cart;
-
-  if (!shippingAddress) {
-    history.push("/shipping");
-  }
 
   const [paymentMethod, setPaymentMethod] = useState("Paypal");
 
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
-
+  // if (!userInfo) {
+  //   history.push("/login");
+  // }
   const submitHandler = (e) => {
     e.preventDefault();
     dispatch(savePaymentMethod(paymentMethod));

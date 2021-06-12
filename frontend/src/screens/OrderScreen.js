@@ -23,7 +23,7 @@ import {
   ORDER_PAY_RESET,
   ORDER_DELIVER_RESET,
 } from "../constants/orderConstants";
-
+// import { RAZORPAY_ID } from "../../../backend/secrets/razorpay";
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
 
@@ -61,10 +61,9 @@ const OrderScreen = ({ match, history }) => {
     }
 
     const addPayPalScript = async () => {
-      const { data: clientId } = await axios.get("/api/config/paypal");
       const script = document.createElement("script");
       script.type = "text/javascript";
-      script.src = `https://www.paypal.com/sdk/js?client-id=${clientId}`;
+      script.src = `https://checkout.razorpay.com/v1/checkout.js`;
       script.async = true;
       script.onload = () => {
         setSdkReady(true);
@@ -88,6 +87,62 @@ const OrderScreen = ({ match, history }) => {
   const successPaymentHandler = (paymentResult) => {
     console.log(paymentResult);
     dispatch(payOrder(orderId, paymentResult));
+  };
+
+  const payRazorPay = async () => {
+    const config = {
+      headers: {
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+
+    const { data } = await axios.post(
+      `/api/razorpay`,
+      {
+        orderid: match.params.id,
+      },
+      config
+    );
+    console.log(data, " ", userInfo.name);
+    var options = {
+      key: data, // Enter the Key ID generated from the Dashboard
+      amount: Math.floor(order.totalPrice * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+      currency: "INR",
+      name: userInfo.name,
+      description: "Test Transaction",
+      // "image": "https://example.com/your_logo",
+      order_id: data.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+      // handler: function (response) {
+      //   alert(response.razorpay_payment_id);
+      //   alert(response.razorpay_order_id);
+      //   alert(response.razorpay_signature);
+      // },
+      prefill: {
+        name: userInfo.name,
+        email: userInfo.email,
+      },
+      theme: {
+        color: "#3399cc",
+      },
+      handler: function (response) {
+        // alert(response.razorpay_payment_id);
+        // alert(response.razorpay_order_id);
+        // alert(response.razorpay_signature);
+        dispatch(payOrder(orderId, response));
+      },
+    };
+    const paymentObject = new window.Razorpay(options);
+    paymentObject.open();
+
+    // paymentObject.on("payment.failed", function (response) {
+    //   alert(response.error.code);
+    //   alert(response.error.description);
+    //   alert(response.error.source);
+    //   alert(response.error.step);
+    //   alert(response.error.reason);
+    //   alert(response.error.metadata.order_id);
+    //   alert(response.error.metadata.payment_id);
+    // });
   };
 
   //   const deliverHandler = () => {
@@ -165,7 +220,7 @@ const OrderScreen = ({ match, history }) => {
                           </Link>
                         </Col>
                         <Col md={4}>
-                          {item.qty} x ${item.price} = ${item.qty * item.price}
+                          {item.qty} x ₹{item.price} = ₹{item.qty * item.price}
                         </Col>
                       </Row>
                     </ListGroup.Item>
@@ -184,25 +239,25 @@ const OrderScreen = ({ match, history }) => {
               <ListGroup.Item>
                 <Row>
                   <Col>Items</Col>
-                  <Col>${order.itemsPrice}</Col>
+                  <Col>₹{order.itemsPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Shipping</Col>
-                  <Col>${order.shippingPrice}</Col>
+                  <Col>₹{order.shippingPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Tax</Col>
-                  <Col>${order.taxPrice}</Col>
+                  <Col>₹{order.taxPrice}</Col>
                 </Row>
               </ListGroup.Item>
               <ListGroup.Item>
                 <Row>
                   <Col>Total</Col>
-                  <Col>${order.totalPrice}</Col>
+                  <Col>₹{order.totalPrice}</Col>
                 </Row>
               </ListGroup.Item>
               {!order.isPaid && (
@@ -211,10 +266,11 @@ const OrderScreen = ({ match, history }) => {
                   {!sdkReady ? (
                     <Loader />
                   ) : (
-                    <PayPalButton
-                      amount={order.totalPrice}
-                      onSuccess={successPaymentHandler}
-                    />
+                    // <PayPalButton
+                    //   amount={order.totalPrice}
+                    //   onSuccess={successPaymentHandler}
+                    // />
+                    <Button onClick={payRazorPay}>Pay</Button>
                   )}
                 </ListGroup.Item>
               )}

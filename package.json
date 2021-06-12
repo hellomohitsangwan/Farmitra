@@ -15,6 +15,7 @@
   "author": "mohit kuamr",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "colors": "^1.4.0",
     "cookie-parser": "^1.4.5",
@@ -23,7 +24,8 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.1.4",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.12.6"
+    "mongoose": "^5.12.6",
+    "razorpay": "^2.0.6"
   },
   "devDependencies": {
     "concurrently": "^6.0.2",

@@ -40,7 +40,7 @@ const PaymentScreen = ({ history }) => {
               label="PayPal or Credit Card"
               id="PayPal"
               name="paymentMethod"
-              value="PayPal"
+              value="razorpay"
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
             {/* //for addding second method */}

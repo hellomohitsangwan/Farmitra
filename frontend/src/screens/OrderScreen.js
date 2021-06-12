@@ -45,7 +45,7 @@ const OrderScreen = ({ match, history }) => {
 
   if (!loading && order) {
     //   Calculate prices
-    console.log(order);
+    // console.log(order);
     const addDecimals = (num) => {
       return (Math.round(num * 100) / 100).toFixed(2);
     };
@@ -84,12 +84,14 @@ const OrderScreen = ({ match, history }) => {
     }
   }, [dispatch, orderId, successPay, order, userInfo, history]);
 
-  const successPaymentHandler = (paymentResult) => {
-    console.log(paymentResult);
-    dispatch(payOrder(orderId, paymentResult));
-  };
+  // const successPaymentHandler = (paymentResult) => {
+  //   // console.log(paymentResult);
+  //   dispatch(payOrder(orderId, paymentResult));
+  // };
+  const [loadingpayy, setloadingPay] = useState(false);
 
   const payRazorPay = async () => {
+    setloadingPay(true);
     const config = {
       headers: {
         Authorization: `Bearer ${userInfo.token}`,
@@ -103,7 +105,7 @@ const OrderScreen = ({ match, history }) => {
       },
       config
     );
-    console.log(data, " ", userInfo.name);
+    // console.log(data, " ", userInfo.name);
     var options = {
       key: data, // Enter the Key ID generated from the Dashboard
       amount: Math.floor(order.totalPrice * 100), // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
@@ -133,7 +135,7 @@ const OrderScreen = ({ match, history }) => {
     };
     const paymentObject = new window.Razorpay(options);
     paymentObject.open();
-
+    setloadingPay(false);
     // paymentObject.on("payment.failed", function (response) {
     //   alert(response.error.code);
     //   alert(response.error.description);
@@ -265,11 +267,13 @@ const OrderScreen = ({ match, history }) => {
                   {loadingPay && <Loader />}
                   {!sdkReady ? (
                     <Loader />
+                  ) : // <PayPalButton
+                  //   amount={order.totalPrice}
+                  //   onSuccess={successPaymentHandler}
+                  // />
+                  loadingpayy ? (
+                    <Loader />
                   ) : (
-                    // <PayPalButton
-                    //   amount={order.totalPrice}
-                    //   onSuccess={successPaymentHandler}
-                    // />
                     <Button onClick={payRazorPay}>Pay</Button>
                   )}
                 </ListGroup.Item>

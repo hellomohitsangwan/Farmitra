@@ -47,10 +47,10 @@ app.post("/api/razorpay", protect, async (req, res) => {
   };
   try {
     const response = await razorpay.orders.create(create);
-    console.log(response, " ", create.amount);
+    // console.log(response, " ", create.amount);
     res.send(RAZORPAY_ID);
   } catch (error) {
-    console.log(error);
+    // console.log(error);
   }
 });
 // app.use("/api", cookieVerifyRoute);

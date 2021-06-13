@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { getUserDetails, updateUserProflile } from "../actions/userActions";
+import { listMyOrders } from "../actions/orderAction";
 
 const ProfileScreen = ({ location, history }) => {
   const [email, setEmail] = useState("");
@@ -24,6 +25,9 @@ const ProfileScreen = ({ location, history }) => {
   const { success } = userUpdateProfile;
   const loading2 = userUpdateProfile.loading;
 
+  const orderListMy = useSelector((state) => state.orderMyList);
+  const { loading: loadingOrders, error: OrdersError, orders } = orderListMy;
+
   useEffect(() => {
     if (!userInfo) {
       //means user is not logged in
@@ -32,6 +36,7 @@ const ProfileScreen = ({ location, history }) => {
       if (!user.name) {
         //means userDetails() is not dispatched till so we have to dispatch it
         dispatch(getUserDetails("profile"));
+        dispatch(listMyOrders());
       } else {
         setName(user.name);
         setEmail(user.email);

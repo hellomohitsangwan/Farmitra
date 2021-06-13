@@ -57,7 +57,7 @@ export const getOrderById = asyncHandler(async (req, res) => {
 // @route   PUT /api/orders/:id/pay
 // @access  Private
 export const updateOrderToPaid = asyncHandler(async (req, res) => {
-  const order = await await Order.findById(req.params.id);
+  const order = await Order.findById(req.params.id);
 
   if (order) {
     order.isPaid = true;
@@ -74,4 +74,12 @@ export const updateOrderToPaid = asyncHandler(async (req, res) => {
     res.status(404);
     throw new Error("order not found");
   }
+});
+
+// @desc    Get loged in user
+// @route   PUT /api/orders/myorders
+// @access  Private
+export const getMyOrders = asyncHandler(async (req, res) => {
+  const order = await Order.find({ user: req.user._id });
+  res.json(order);
 });

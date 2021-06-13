@@ -1,4 +1,5 @@
 import axios from "axios";
+import { ORDER_LIST_MY_RESET } from "../constants/orderConstants";
 import {
   USER_LOGOUT,
   USER_LOGIN_FAIL,
@@ -14,6 +15,7 @@ import {
   USER_UPDATE_PROGILE_SUCCESS,
   USER_UPDATE_PROGILE_FAIL,
   USER_UPDATE_PROGILE_RESET,
+  USER_DETAILS_RESET,
 } from "../constants/userConstants";
 
 export const login = (email, password) => async (dispatch) => {
@@ -84,6 +86,8 @@ export const register = (name, email, password) => async (dispatch) => {
 export const logout = () => (dispatch) => {
   dispatch({ type: USER_LOGOUT });
   dispatch({ type: "USER_REGISTER_INFO_REMOVE" });
+  dispatch({ type: USER_DETAILS_RESET });
+  dispatch({ type: ORDER_LIST_MY_RESET });
 };
 
 export const getUserDetails = (endpoint) => async (dispatch, getState) => {

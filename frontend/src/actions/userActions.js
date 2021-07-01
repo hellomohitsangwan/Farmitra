@@ -17,6 +17,8 @@ import {
   USER_UPDATE_PROGILE_RESET,
   USER_DETAILS_RESET,
   USER_LIST_REQUEST,
+  USER_LIST_SUCCESS,
+  USER_LIST_FAIL,
 } from "../constants/userConstants";
 
 export const login = (email, password) => async (dispatch) => {
@@ -170,12 +172,12 @@ export const listUSers = () => async (dispatch, getState) => {
     const { data } = await axios.get(`api/users`, config);
 
     dispatch({
-      type: USER_UPDATE_PROGILE_SUCCESS,
+      type: USER_LIST_SUCCESS,
       payload: data,
     });
   } catch (err) {
     dispatch({
-      type: USER_UPDATE_PROGILE_FAIL,
+      type: USER_LIST_FAIL,
       payload:
         err.response && err.response.data.message
           ? err.response.data.message

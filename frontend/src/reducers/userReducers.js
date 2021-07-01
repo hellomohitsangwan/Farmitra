@@ -14,6 +14,9 @@ import {
   USER_UPDATE_PROGILE_FAIL,
   USER_UPDATE_PROGILE_RESET,
   USER_DETAILS_RESET,
+  USER_LIST_REQUEST,
+  USER_LIST_SUCCESS,
+  USER_LIST_FAIL,
 } from "../constants/userConstants";
 
 export const userLoginReducer = (state = {}, action) => {
@@ -68,6 +71,21 @@ export const userupdateProfileReducer = (state = {}, action) => {
     case USER_UPDATE_PROGILE_SUCCESS:
       return { loading: false, success: true, userInfo: action.payload };
     case USER_UPDATE_PROGILE_FAIL:
+      return { loading: false, error: action.payload };
+
+    default:
+      return state;
+  }
+};
+
+// admin reducers
+export const userListReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_LIST_REQUEST:
+      return { loading: true };
+    case USER_LIST_SUCCESS:
+      return { loading: false, userInfo: action.payload };
+    case USER_LIST_FAIL:
       return { loading: false, error: action.payload };
 
     default:

@@ -16,6 +16,7 @@ import {
   USER_UPDATE_PROGILE_FAIL,
   USER_UPDATE_PROGILE_RESET,
   USER_DETAILS_RESET,
+  USER_LIST_REQUEST,
 } from "../constants/userConstants";
 
 export const login = (email, password) => async (dispatch) => {
@@ -134,6 +135,39 @@ export const updateUserProflile = (user) => async (dispatch, getState) => {
       },
     };
     const { data } = await axios.put(`api/users/profile`, user, config);
+
+    dispatch({
+      type: USER_UPDATE_PROGILE_SUCCESS,
+      payload: data,
+    });
+  } catch (err) {
+    dispatch({
+      type: USER_UPDATE_PROGILE_FAIL,
+      payload:
+        err.response && err.response.data.message
+          ? err.response.data.message
+          : err.message,
+    });
+    console.log(err);
+  }
+};
+
+//admin actions
+
+export const listUSers = () => async (dispatch, getState) => {
+  try {
+    dispatch({ type: USER_LIST_REQUEST });
+    const {
+      userLogin: { userInfo }, //deconstructs the userLogin state to get the token
+    } = getState();
+
+    const config = {
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${userInfo.token}`,
+      },
+    };
+    const { data } = await axios.get(`api/users`, config);
 
     dispatch({
       type: USER_UPDATE_PROGILE_SUCCESS,

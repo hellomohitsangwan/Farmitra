@@ -13,7 +13,7 @@ import { adminMiddleware, protect } from "../middleware/authMiddleware.js";
 router.route("/").post(registerUser).get(protect, adminMiddleware, getUsers);
 router.post("/login", authUser);
 router.route("/profile").get(protect, getUserProfile);
-router.route("/:id").delete(protect, adminMiddleware, getUserProfile);
+router.route("/:id").delete(protect, adminMiddleware, deleteUSer);
 router
   .route("/profile")
   .get(protect, getUserProfile)

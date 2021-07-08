@@ -79,6 +79,7 @@ export const userupdateProfileReducer = (state = {}, action) => {
 };
 
 // admin reducers
+
 export const userListReducer = (state = {}, action) => {
   switch (action.type) {
     case USER_LIST_REQUEST:

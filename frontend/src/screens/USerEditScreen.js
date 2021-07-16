@@ -5,8 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
-import { getUserDetails, updateUser } from "../actions/userActions";
-import { USER_UPDATE_RESET } from "../constants/userConstants";
+// import { getUserDetails, updateUser } from "../actions/userActions";
+// import { USER_UPDATE_RESET } from "../constants/userConstants";
 
 const UserEditScreen = ({ match, history }) => {
   const userId = match.params.id;
@@ -41,11 +41,11 @@ const UserEditScreen = ({ match, history }) => {
   //       }
   //     // }
   //   }, [dispatch, history, userId, user, successUpdate])
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    dispatch(updateUser({ _id: userId, name, email, isAdmin }));
-  };
+  /* 
+// /*   const submitHandler = (e) => {
+//     e.preventDefault();
+//     dispatch(updateUser({ _id: userId, name, email, isAdmin })); */
+  //   }; */
 
   return (
     <>
@@ -61,7 +61,7 @@ const UserEditScreen = ({ match, history }) => {
         ) : error ? (
           <Message variant="danger">{error}</Message>
         ) : (
-          <Form onSubmit={submitHandler}>
+          <Form>
             <Form.Group controlId="name">
               <Form.Label>Name</Form.Label>
               <Form.Control

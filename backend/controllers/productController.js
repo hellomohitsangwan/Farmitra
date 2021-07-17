@@ -24,7 +24,7 @@ const getProductById = asyncHandler(async (req, res) => {
 // @desc  Fetch single products
 // @route Get /api/products/:id
 // @access Public
-const getProduct = asyncHandler(async (req, res) => {
+const deleteProduct = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
     await product.remove();
@@ -35,4 +35,4 @@ const getProduct = asyncHandler(async (req, res) => {
   }
 });
 
-export { getProducts, getProductById, getProduct };
+export { getProducts, getProductById, deleteProduct };

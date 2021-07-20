@@ -6,7 +6,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 // import Paginate from '../components/Paginate'
 import {
-  // listProducts,
+  listProducts,
   deleteProduct,
   // createProduct,
 } from "../actions/productActions";
@@ -43,6 +43,9 @@ const ProductListScreen = ({ history, match }) => {
 
     if (!userInfo || !userInfo.isAdmin) {
       history.push("/login");
+    }
+    if (successDelete) {
+      dispatch(listProducts());
     }
 
     // if (successCreate) {

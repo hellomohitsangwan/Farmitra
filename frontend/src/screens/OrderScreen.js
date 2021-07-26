@@ -1,16 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { PayPalButton } from "react-paypal-button-v2";
 import { Link } from "react-router-dom";
-import {
-  Row,
-  Col,
-  ListGroup,
-  Image,
-  Card,
-  Button,
-  useAccordionToggle,
-} from "react-bootstrap";
+import { Row, Col, ListGroup, Image, Card, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -23,7 +14,6 @@ import {
   ORDER_PAY_RESET,
   ORDER_DELIEVER_RESET,
 } from "../constants/orderConstants";
-// import { RAZORPAY_ID } from "../../../backend/secrets/razorpay";
 const OrderScreen = ({ match, history }) => {
   const orderId = match.params.id;
 
@@ -46,8 +36,6 @@ const OrderScreen = ({ match, history }) => {
   const { success } = orderCreate;
 
   if (!loading && order) {
-    //   Calculate prices
-    // console.log(order);
     const addDecimals = (num) => {
       return (Math.round(num * 100) / 100).toFixed(2);
     };
@@ -87,7 +75,16 @@ const OrderScreen = ({ match, history }) => {
         setSdkReady(true);
       }
     }
-  }, [dispatch, orderId, successPay, order, userInfo, history, successDeliver]);
+  }, [
+    dispatch,
+    orderId,
+    successPay,
+    order,
+    userInfo,
+    history,
+    successDeliver,
+    success,
+  ]);
 
   // const successPaymentHandler = (paymentResult) => {
   //   // console.log(paymentResult);
@@ -279,7 +276,19 @@ const OrderScreen = ({ match, history }) => {
                   loadingpayy ? (
                     <Loader />
                   ) : (
-                    <Button onClick={payRazorPay}>Pay</Button>
+                    <>
+                      <Button onClick={payRazorPay}>
+                        {order.paymentMethod === "Cash on delievery"
+                          ? "pay now"
+                          : "pay"}
+                      </Button>
+                      <p>
+                        {" "}
+                        {order.paymentMethod === "Cash on delievery"
+                          ? "pay online now for a safe and contactless delievery"
+                          : ""}
+                      </p>
+                    </>
                   )}
                 </ListGroup.Item>
               )}

@@ -7,8 +7,8 @@ import CheckoutSteps from "../components/CheckoutSteps";
 const PaymentScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart);
 
-  const [paymentMethod, setPaymentMethod] = useState("Paypal");
-
+  const [paymentMethod, setPaymentMethod] = useState("");
+  const [isdisabled, setIsDisabled] = useState(true);
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -26,6 +26,13 @@ const PaymentScreen = ({ history }) => {
       history.push("/");
     }
   }, [history, userInfo]);
+  useEffect(() => {
+    if (paymentMethod === "") {
+      setIsDisabled(true);
+    } else {
+      setIsDisabled(false);
+    }
+  }, [paymentMethod]);
   return (
     <FormContainer>
       <CheckoutSteps step2 />
@@ -37,24 +44,24 @@ const PaymentScreen = ({ history }) => {
           <Col>
             <Form.Check
               type="radio"
-              label="Razor pay/new banking"
-              id="PayPal"
+              label="Razor pay/net banking"
+              id="razorpay"
               name="paymentMethod"
               value="razorpay"
               onChange={(e) => setPaymentMethod(e.target.value)}
             ></Form.Check>
             {/* //for addding second method */}
-            {/* <Form.Check
+            <Form.Check
               type="radio"
-              label="Stripe"
-              id="Stripe"
+              label="Cash on delievery"
+              id="cod"
               name="paymentMethod"
-              value="Stripe"
+              value="Cash on delievery"
               onChange={(e) => setPaymentMethod(e.target.value)}
-            ></Form.Check> */}
+            ></Form.Check>
           </Col>
         </Form.Group>
-        <Button type="submit" variant="primary">
+        <Button type="submit" variant="primary" disabled={isdisabled}>
           Continue
         </Button>
       </Form>

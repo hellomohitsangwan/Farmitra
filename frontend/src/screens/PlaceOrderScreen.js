@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Button, Row, Col, ListGroup, Image, Card } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,8 +21,36 @@ const PlaceOrderScreen = ({ history }) => {
   cart.itemsPrice = addDecimals(
     cart.cartItems.reduce((acc, item) => acc + item.price * item.qty, 0)
   );
-  cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100);
-  cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)));
+  const [sp, setSp] = useState(0);
+  useEffect(() => {
+    if (cart.paymentMethod === "Cash on delievery") {
+      if (cart.itemsPrice < 500) {
+        setSp(100);
+      }
+    } else {
+      if (cart.itemsPrice > 500) {
+        setSp(0);
+      } else {
+        setSp(50);
+      }
+    }
+  }, [cart.itemsPrice, cart.paymentMethod]);
+  // if (cart.paymentMethod === "Cash on delievery") {
+  //   if (cart.itemsPrice > 500) {
+  //     setSp(100);
+  //   }
+  // } else {
+  //   if (cart.itemsPrice > 500) {
+  //     setSp(0);
+  //   } else {
+  //     setSp(50);
+  //   }
+  // }
+
+  // cart.shippingPrice = addDecimals(cart.itemsPrice > 100 ? 0 : 100);
+  cart.shippingPrice = sp;
+  // cart.taxPrice = addDecimals(Number((0.15 * cart.itemsPrice).toFixed(2)));
+  cart.taxPrice = 0;
   cart.totalPrice = (
     Number(cart.itemsPrice) +
     Number(cart.shippingPrice) +

@@ -86,10 +86,6 @@ const OrderScreen = ({ match, history }) => {
     success,
   ]);
 
-  // const successPaymentHandler = (paymentResult) => {
-  //   // console.log(paymentResult);
-  //   dispatch(payOrder(orderId, paymentResult));
-  // };
   const [loadingpayy, setloadingPay] = useState(false);
 
   const payRazorPay = async () => {

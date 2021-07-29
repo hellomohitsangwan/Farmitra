@@ -42,6 +42,8 @@ const OrderScreen = ({ match, history }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+  const orderCreate = useSelector((state) => state.orderCreate);
+  const { success } = orderCreate;
 
   if (!loading && order) {
     //   Calculate prices
@@ -56,6 +58,9 @@ const OrderScreen = ({ match, history }) => {
   }
 
   useEffect(() => {
+    if (success) {
+      dispatch({ type: "ORDER_SUCCESS_REMOVE" });
+    }
     if (!userInfo) {
       history.push("/login");
     }

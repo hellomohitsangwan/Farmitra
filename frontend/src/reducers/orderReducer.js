@@ -39,6 +39,10 @@ export const ordeCreateReducer = (state = {}, action) => {
         loading: false,
         error: action.payload,
       };
+    case "ORDER_SUCCESS_REMOVE":
+      return {
+        success: false,
+      };
     default:
       return state;
   }

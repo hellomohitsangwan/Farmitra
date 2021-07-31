@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 //redux files
 import { listProducts } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
+import Footer from "../components/Footer";
 const HomeScreen = ({ match }) => {
   const keyword = match.params.keyword;
 
@@ -31,6 +32,7 @@ const HomeScreen = ({ match }) => {
           ))}
         </Row>
       )}
+      <Footer />
     </>
   );
 };

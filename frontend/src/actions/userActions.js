@@ -156,7 +156,7 @@ export const updateUserProflile = (user) => async (dispatch, getState) => {
 
 //admin actions
 
-export const listUSers = () => async (dispatch, getState) => {
+export const listUsers = () => async (dispatch, getState) => {
   try {
     dispatch({ type: USER_LIST_REQUEST });
     const {
@@ -169,7 +169,7 @@ export const listUSers = () => async (dispatch, getState) => {
         Authorization: `Bearer ${userInfo.token}`,
       },
     };
-    const { data } = await axios.get(`api/users`, config);
+    const { data } = await axios.get(`/api/users`, config);
 
     dispatch({
       type: USER_LIST_SUCCESS,

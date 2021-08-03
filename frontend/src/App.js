@@ -20,6 +20,7 @@ import OrderListScreen from "./screens/OrderListScreen";
 import Test from "./components/Test";
 import UserEditScreen from "./screens/USerEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
+import MainFooter from "./components/MainFooter";
 const App = () => {
   return (
     <Router>
@@ -46,7 +47,7 @@ const App = () => {
         </Container>
       </main>
 
-      {/* <Footer /> */}
+      <MainFooter />
     </Router>
   );
 };

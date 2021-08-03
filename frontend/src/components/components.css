@@ -2,3 +2,9 @@
 .heading {
   font-weight: bold;
 }
+
+/* main footer */
+.MainFooter {
+  margin-bottom: 0 !important;
+  background-color: yellow;
+}

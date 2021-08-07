@@ -16,30 +16,32 @@ import {
   PRODUCT_UPDATE_FAIL,
 } from "../constants/productConstants";
 import axios from "axios";
-export const listProducts = () => async (dispatch) => {
-  try {
-    dispatch({ type: PRODUCT_LIST_REQUEST });
-    const res = await axios.get("/api/products");
-    if (res.status === 500) {
+export const listProducts =
+  (keyword = "") =>
+  async (dispatch) => {
+    try {
+      dispatch({ type: PRODUCT_LIST_REQUEST });
+      const res = await axios.get(`/api/products?keyword=${keyword}`);
+      if (res.status === 500) {
+        dispatch({
+          type: PRODUCT_LIST_FAIL,
+          payload: "check your network connection",
+        });
+        return;
+      }
+      dispatch({ type: PRODUCT_LIST_SUCCESS, payload: res.data });
+    } catch (err) {
       dispatch({
         type: PRODUCT_LIST_FAIL,
-        payload: "check your network connection",
+        payload:
+          err.response && err.response.status === 500
+            ? "check your network connection"
+            : err.response && err.response.status !== 500
+            ? err.response.data.message
+            : "check your network connection",
       });
-      return;
     }
-    dispatch({ type: PRODUCT_LIST_SUCCESS, payload: res.data });
-  } catch (err) {
-    dispatch({
-      type: PRODUCT_LIST_FAIL,
-      payload:
-        err.response && err.response.status === 500
-          ? "check your network connection"
-          : err.response && err.response.status !== 500
-          ? err.response.data.message
-          : "check your network connection",
-    });
-  }
-};
+  };
 export const listProductDetails = (id) => async (dispatch) => {
   try {
     dispatch({ type: PRODUCT_DETAILS_REQUEST });

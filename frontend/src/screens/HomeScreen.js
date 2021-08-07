@@ -6,13 +6,15 @@ import Loader from "../components/Loader";
 //redux files
 import { listProducts } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
-const HomeScreen = () => {
+const HomeScreen = ({ match }) => {
+  const keyword = match.params.keyword;
+
   const productList = useSelector((state) => state.productList); //choose from whatever in our store
   const { loading, products, error } = productList;
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(listProducts());
-  }, [dispatch]);
+    dispatch(listProducts(keyword));
+  }, [dispatch, keyword]);
   return (
     <>
       <h1>Latest Products</h1>

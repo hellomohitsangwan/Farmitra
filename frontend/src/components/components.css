@@ -5,6 +5,107 @@
 
 /* main footer */
 .MainFooter {
+  /* position: fixed; */
+  /* left: 0;
+  bottom: 0; */
+  width: 100%;
   margin-bottom: 0 !important;
   background-color: yellow;
+  /* margin-top: 4000px !important; */
+}
+.img-responsive {
+  width: 28px;
+  height: 28px;
+}
+
+/* search box */
+.input-group {
+  width: 90%;
+  margin-right: 35%;
+}
+
+#search_field {
+  height: 2.4rem;
+  padding: 1rem;
+}
+#search_btn {
+  background-color: #febd69;
+}
+
+/* products */
+
+#products_heading {
+  margin-top: 1.8rem;
+}
+
+.card {
+  height: 100%;
+}
+
+.card-title a {
+  color: #2e2e2e;
+}
+
+.card-title a:hover {
+  color: #fa9c23;
+  text-decoration: none;
+}
+
+.card-body {
+  padding-left: 0;
+}
+
+.card-text {
+  font-size: 1.4rem;
+}
+
+#view_btn {
+  background-color: #fa9c23;
+  color: white;
+}
+
+.card-img-top {
+  width: 200px;
+  height: 150px;
+}
+
+.ratings {
+  font-size: 1.2rem;
+  color: #fdcc0d;
+}
+
+#no_of_reviews {
+  font-size: 0.85rem;
+  color: grey;
+  margin-left: 0.5rem;
+}
+
+/* loader */
+.loader {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: 20%; */
+  width: 80px;
+  height: 80px;
+  padding-left: 0;
+}
+.loader:after {
+  content: " ";
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fa9c23;
+  border-color: #fa9c23 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

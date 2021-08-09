@@ -176,11 +176,14 @@ const OrderScreen = ({ match, history }) => {
                 {order.shippingAddress.country}
               </p>
               {order.isDelivered ? (
-                <Message variant="success">
+                // <Message variant="success">
+                //   Delivered on {order.deliveredAt}
+                // </Message>
+                <div className={`alert alert-danger`}>
                   Delivered on {order.deliveredAt}
-                </Message>
+                </div>
               ) : (
-                <Message variant="danger">Not Delivered</Message>
+                <div className={`alert alert-success`}>Not Delievered</div>
               )}
             </ListGroup.Item>
 
@@ -191,9 +194,11 @@ const OrderScreen = ({ match, history }) => {
                 {order.paymentMethod}
               </p>
               {order.isPaid ? (
-                <Message variant="success">Paid on {order.paidAt}</Message>
+                <div className={`alert alert-success`}>
+                  Paid on {order.paidAt}
+                </div>
               ) : (
-                <Message variant="danger">Not Paid</Message>
+                <div className={`alert alert-danger`}>Not Paid</div>
               )}
             </ListGroup.Item>
 

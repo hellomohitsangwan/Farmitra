@@ -3,8 +3,10 @@ import { Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../actions/userActions";
-import { Route } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 import SearchBox from "./SearchBox";
+import logo from "../data/images/vh-logo.png";
+import "./components.css";
 const Header = () => {
   const dispatch = useDispatch();
 
@@ -19,12 +21,19 @@ const Header = () => {
       <Navbar bg="primary" variant="dark" collapseOnSelect expand="lg">
         <Container>
           {/* {" "} */}
+          <Link to="/">
+            <img className="img-responsive mr-2" src={logo} alt="logo"></img>
+          </Link>
           <LinkContainer to="/">
             <Navbar.Brand>Vedhut</Navbar.Brand>
-          </LinkContainer>
+          </LinkContainer>{" "}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Route render={({ history }) => <SearchBox history={history} />} />
+            <div className="col-12 col-md-6  mt-md-0 ml-auto mr-auto">
+              <Route
+                render={({ history }) => <SearchBox history={history} />}
+              />
+            </div>
             <Nav className="ml-auto">
               {/* <LinkContainer to="/wishlist">
                 {/* {" "} */}

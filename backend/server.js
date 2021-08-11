@@ -12,7 +12,7 @@ import Razorpay from "razorpay";
 import Order from "./models/orderModel.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import cloudinary from "cloudinary";
-import bodyparser from "body-parser";
+// import bodyparser from "body-parser";
 import fileUpload from "express-fileupload";
 // const cloudinary = require("cloudinary");
 // import cookieVerifyRoute from "./routes/cookieVerifyRoute.js";
@@ -26,7 +26,7 @@ var razorpay = new Razorpay({
 
 dotenv.config();
 const app = express();
-app.use(bodyparser.urlencoded({ extended: true }));
+// app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(fileUpload());
 cloudinary.config({

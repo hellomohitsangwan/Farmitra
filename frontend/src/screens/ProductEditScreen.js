@@ -21,7 +21,7 @@ const ProductEditScreen = ({ match, history }) => {
   const [countInStock, setCountInStock] = useState(0);
   const [description, setDescription] = useState("");
   const [uploading, setUploading] = useState(false);
-
+  const [images, setImages] = useState([]);
   const dispatch = useDispatch();
 
   const productDetails = useSelector((state) => state.productDetails);
@@ -57,7 +57,7 @@ const ProductEditScreen = ({ match, history }) => {
         setDescription(product.description);
       }
     }
-  }, [dispatch, history, productId, product, successUpdate]);
+  }, [dispatch, history, productId, product, successUpdate, userInfo]);
 
   const uploadFileHandler = async (e) => {
     const file = e.target.files[0];
@@ -79,21 +79,68 @@ const ProductEditScreen = ({ match, history }) => {
     }
   };
 
+  const onChange = (e) => {
+    const files = Array.from(e.target.files);
+
+    // setImagesPreview([]);
+    setImages([]);
+
+    files.forEach((file) => {
+      const reader = new FileReader();
+
+      reader.onload = () => {
+        if (reader.readyState === 2) {
+          // setImagesPreview(oldArray => [...oldArray, reader.result])
+          setImages((oldArray) => [...oldArray, reader.result]);
+        }
+      };
+
+      reader.readAsDataURL(file);
+    });
+  };
   const submitHandler = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    // dispatch(
+    //   updateProduct({
+    //     _id: productId,
+    //     name,
+    //     price,
+    //     image,
+    //     brand,
+    //     category,
+    //     description,
+    //     countInStock,
+    //   })
+    // );
+    // console.log(name, price, image);
+
+    // const formData = new FormData();
+    // formData.set("name", name);
+    // formData.set("price", price);
+    // formData.set("description", description);
+    // formData.set("category", category);
+    // formData.set("countInStock", countInStock);
+    // // formData.set('seller', seller);
+
+    // images.forEach((image) => {
+    //   formData.append("images", image);
+    // });
     dispatch(
-      updateProduct({
-        _id: productId,
-        name,
-        price,
-        image,
-        brand,
-        category,
-        description,
-        countInStock,
-      })
+      updateProduct(
+        {
+          _id: productId,
+          name,
+          price,
+          images,
+          brand,
+          category,
+          description,
+          countInStock,
+        },
+        productId
+      )
     );
-    console.log(name, price, image);
+    // dispatch(updateProduct(formData, productId));
   };
 
   return (
@@ -139,12 +186,25 @@ const ProductEditScreen = ({ match, history }) => {
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
-              <Form.File
+              {/* <Form.File
                 id="image-file"
                 label="Choose File"
                 custom
                 onChange={uploadFileHandler}
-              ></Form.File>
+              ></Form.File> */}
+              <div className="custom-file">
+                <input
+                  type="file"
+                  name="product_images"
+                  className="custom-file-input"
+                  id="customFile"
+                  onChange={onChange}
+                  multiple
+                />
+                <label className="custom-file-label" htmlFor="customFile">
+                  Choose Images
+                </label>
+              </div>
               {uploading && <Loader />}
             </Form.Group>
 

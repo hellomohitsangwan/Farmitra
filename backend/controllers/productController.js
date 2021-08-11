@@ -1,6 +1,6 @@
 import asyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
-
+import cloudinary from "cloudinary";
 // @desc  Fetch all products
 // @route Get /api/products
 // @access Public
@@ -47,25 +47,61 @@ const deleteProduct = asyncHandler(async (req, res) => {
 // @route PUT /api/products/:id
 // @access Admin protected
 const updateProduct = asyncHandler(async (req, res) => {
-  const { name, price, description, image, brand, category, countInStock } =
-    req.body;
-  // res.json(req.body);
-  const product = await Product.findById(req.params.id);
+  // const { name, price, description, image, brand, category, countInStock } =
+  //   req.body;
+  // // res.json(req.body);
+  // const product = await Product.findById(req.params.id);
 
-  if (product) {
-    product.name = name;
-    product.price = price;
-    product.description = description;
-    product.category = category;
-    product.countInStock = countInStock;
-    product.image = image;
-    product.brand = brand;
+  // if (product) {
+  //   product.name = name;
+  //   product.price = price;
+  //   product.description = description;
+  //   product.category = category;
+  //   product.countInStock = countInStock;
+  //   product.image = image;
+  //   product.brand = brand;
 
-    const updatedProduct = product.save();
-    res.status(201).json(product);
+  //   const updatedProduct = product.save();
+  //   res.status(201).json(product);
+  // } else {
+  //   res.status(404);
+  //   throw new Error("product not found");
+
+  let product = await Product.findById(req.params.id);
+
+  // if (!product) {
+  //     return next(new ErrorHandler('Product not found', 404));
+  // }
+
+  let images = [];
+  if (typeof req.body.images === "string") {
+    images.push(req.body.images);
   } else {
-    res.status(404);
-    throw new Error("product not found");
+    images = req.body.images;
+  }
+
+  if (images !== undefined) {
+    // Deleting images associated with the product
+    for (let i = 0; i < product.images.length; i++) {
+      const result = await cloudinary.v2.uploader.destroy(
+        product.images[i].public_id
+      );
+    }
+
+    let imagesLinks = [];
+
+    for (let i = 0; i < images.length; i++) {
+      const result = await cloudinary.v2.uploader.upload(images[i], {
+        folder: "products",
+      });
+
+      imagesLinks.push({
+        public_id: result.public_id,
+        url: result.secure_url,
+      });
+    }
+
+    req.body.images = imagesLinks;
   }
 });
 
@@ -83,9 +119,53 @@ const createProduct = asyncHandler(async (req, res) => {
     countInStock: 2,
     numReviews: 0,
     description: "sample description",
+    images: [
+      {
+        public_id: "products/wmoa49q9e70ze9xtcra2",
+        url: "https://res.cloudinary.com/bookit/image/upload/v1606293153/products/wmoa49q9e70ze9xtcra2.jpg",
+      },
+      {
+        public_id: "products/i0k1wdwi5hrpmzwxvsds",
+        url: "https://res.cloudinary.com/bookit/image/upload/v1606293152/products/i0k1wdwi5hrpmzwxvsds.jpg",
+      },
+      {
+        public_id: "products/bshmuo9qisfhz4azvnsd",
+        url: "https://res.cloudinary.com/bookit/image/upload/v1606293153/products/bshmuo9qisfhz4azvnsd.jpg",
+      },
+    ],
   });
   const createdProduct = await product.save();
   res.json(createdProduct);
+
+  // let images = [];
+  // if (typeof req.body.images === "string") {
+  //   images.push(req.body.images);
+  // } else {
+  //   images = req.body.images;
+  // }
+
+  // let imagesLinks = [];
+
+  // for (let i = 0; i < images.length; i++) {
+  //   const result = await cloudinary.v2.uploader.upload(images[i], {
+  //     folder: "products",
+  //   });
+
+  //   imagesLinks.push({
+  //     public_id: result.public_id,
+  //     url: result.secure_url,
+  //   });
+  // }
+
+  // req.body.images = imagesLinks;
+  // req.body.user = req.user.id;
+
+  // const product = await Product.create(req.body);
+
+  // res.status(201).json({
+  //   success: true,
+  //   product,
+  // });
 });
 
 export {

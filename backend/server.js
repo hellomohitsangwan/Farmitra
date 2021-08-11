@@ -11,6 +11,10 @@ import { protect } from "./middleware/authMiddleware.js";
 import Razorpay from "razorpay";
 import Order from "./models/orderModel.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import cloudinary from "cloudinary";
+import bodyparser from "body-parser";
+import fileUpload from "express-fileupload";
+// const cloudinary = require("cloudinary");
 // import cookieVerifyRoute from "./routes/cookieVerifyRoute.js";
 // import cookieParser from "cookie-parser";
 
@@ -22,8 +26,14 @@ var razorpay = new Razorpay({
 
 dotenv.config();
 const app = express();
+app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(fileUpload());
+cloudinary.config({
+  cloud_name: "djfh8ecu4",
+  api_key: "329259279517943",
+  api_secret: "SZ9Bp_Tln70t0lCJGv54PrX-lP0",
+});
 // app.use(cookieParser());
 connectDB();
 app.get("/", (req, res) => {

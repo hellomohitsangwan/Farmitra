@@ -69,9 +69,9 @@ const updateProduct = asyncHandler(async (req, res) => {
 
   let product = await Product.findById(req.params.id);
 
-  // if (!product) {
-  //     return next(new ErrorHandler('Product not found', 404));
-  // }
+  if (!product) {
+    return next(new ErrorHandler("Product not found", 404));
+  }
 
   let images = [];
   if (typeof req.body.images === "string") {
@@ -103,6 +103,17 @@ const updateProduct = asyncHandler(async (req, res) => {
 
     req.body.images = imagesLinks;
   }
+
+  product = await Product.findByIdAndUpdate(req.params.id, req.body, {
+    new: true,
+    runValidators: true,
+    useFindAndModify: false,
+  });
+
+  res.status(200).json({
+    success: true,
+    product,
+  });
 });
 
 // @desc  Create single product

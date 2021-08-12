@@ -8,6 +8,7 @@ import {
   Button,
   Form,
 } from "react-bootstrap";
+import { Carousel } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating";
 import Message from "../components/Message";
@@ -39,8 +40,19 @@ const ProductScreen = ({ match, history }) => {
         <Message variant="danger" children={error} />
       ) : (
         <Row>
-          <Col md={6}>
-            <Image src={product.image} alt={product.name} fluid />
+          <Col sm={12} md={6}>
+            <Carousel pause="hover">
+              {product.images &&
+                product.images.map((image) => (
+                  <Carousel.Item key={image.public_id}>
+                    <img
+                      className="d-block w-100"
+                      src={image.url}
+                      alt={product.title}
+                    />
+                  </Carousel.Item>
+                ))}
+            </Carousel>
           </Col>
           <Col md={3}>
             <ListGroup variant="flush">

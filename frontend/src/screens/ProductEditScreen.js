@@ -222,6 +222,7 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import FormContainer from "../components/FormContainer";
 import {
+  clearErrors,
   listProductDetails,
   newProduct,
   updateProduct,
@@ -270,16 +271,19 @@ const NewProductScreen = ({ history, match }) => {
       setCategory(product.category);
       setCountInStock(product.countInStock);
       setDescription(product.description);
+      setOldImages(product.images);
     }
-
+    if (isUpdated) {
+      dispatch(listProductDetails(productId));
+    }
     // if (error) {
-    //     alert.error(error);
-    //     dispatch(clearErrors())
+    //   // alert.error(error);
+    //   dispatch(clearErrors());
     // }
 
     // if (updateError) {
-    //     alert.error(updateError);
-    //     dispatch(clearErrors())
+    //   // alert.error(updateError);
+    //   dispatch(clearErrors());
     // }
 
     if (isUpdated) {
@@ -287,7 +291,16 @@ const NewProductScreen = ({ history, match }) => {
       // alert.success('Product updated successfully');
       dispatch({ type: UPDATE_PRODUCT_RESET });
     }
-  }, [dispatch, isUpdated, history, userInfo, product, productId]);
+  }, [
+    dispatch,
+    isUpdated,
+    history,
+    userInfo,
+    product,
+    productId,
+    updateError,
+    error,
+  ]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -304,13 +317,14 @@ const NewProductScreen = ({ history, match }) => {
       formData.append("images", image);
     });
 
-    dispatch(updateProduct(productId, formData));
+    dispatch(updateProduct(formData, productId));
   };
   const onChange = (e) => {
     const files = Array.from(e.target.files);
 
     setImagesPreview([]);
     setImages([]);
+    setOldImages([]);
 
     files.forEach((file) => {
       const reader = new FileReader();
@@ -332,13 +346,13 @@ const NewProductScreen = ({ history, match }) => {
         Go Back
       </Link>
       <FormContainer>
-        <h1>Create Product</h1>
+        <h1>Edit Product</h1>
         {/* {(loading && !error) && <Loader />}
         {error && <Message variant="danger">{error}</Message>} */}
         {loading ? (
           <Loader />
-        ) : error ? (
-          <Message variant="danger">{error}</Message>
+        ) : updateError ? (
+          <Message variant="danger">{updateError}</Message>
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name">
@@ -359,6 +373,7 @@ const NewProductScreen = ({ history, match }) => {
                 onChange={(e) => setPrice(e.target.value)}
               ></Form.Control>
             </Form.Group>
+
             <div className="form-group">
               <label>Images</label>
 
@@ -376,6 +391,18 @@ const NewProductScreen = ({ history, match }) => {
                 </label>
               </div>
 
+              {oldImages &&
+                oldImages.map((img) => (
+                  <img
+                    key={img}
+                    src={img.url}
+                    alt={img.url}
+                    className="mt-3 mr-2"
+                    width="55"
+                    height="52"
+                  />
+                ))}
+
               {imagesPreview.map((img) => (
                 <img
                   src={img}
@@ -386,7 +413,7 @@ const NewProductScreen = ({ history, match }) => {
                   height="52"
                 />
               ))}
-            </div>{" "}
+            </div>
             <Form.Group controlId="brand">
               <Form.Label>Brand</Form.Label>
               <Form.Control

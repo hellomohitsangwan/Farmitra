@@ -118,6 +118,7 @@ export const newProductReducer = (state = { product: {} }, action) => {
       return {
         ...state,
         error: action.payload,
+        loading: false,
       };
 
     case NEW_PRODUCT_RESET:
@@ -157,7 +158,7 @@ export const productReducer = (state = {}, action) => {
       return {
         ...state,
         loading: false,
-        isUpdated: action.payload,
+        isUpdated: action.payload.success,
       };
 
     // case DELETE_PRODUCT_FAIL:
@@ -165,6 +166,7 @@ export const productReducer = (state = {}, action) => {
       return {
         ...state,
         error: action.payload,
+        loading: false,
       };
 
     // case DELETE_PRODUCT_RESET:

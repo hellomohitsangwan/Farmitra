@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./components.css";
 import InstagramIcon from "@material-ui/icons/Instagram";
-import ButtonMailto from "./ButtonMail-to";
+import ButtonMailto from "./ButtonMailto";
 const Footer = () => {
   return (
     <footer>

@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import "./components.css";
 import InstagramIcon from "@material-ui/icons/Instagram";
+import ButtonMailto from "./ButtonMail-to";
 const Footer = () => {
   return (
     <footer>
@@ -13,15 +14,15 @@ const Footer = () => {
             <div>
               <a
                 target="blank"
-                href="https://hellomohitsangwan.github.io/ms/projects.html"
+                href="https://drive.google.com/file/d/1IipMat1g6YaFBiIuE8tgUzFItbd4_EUy/view?usp=sharing"
               >
-                Terms and technology
+                Terms and Conditions
               </a>{" "}
             </div>
             <div>
               <a
                 target="blank"
-                href="https://hellomohitsangwan.github.io/ms/projects.html"
+                href="https://drive.google.com/file/d/1mu0bfrxuI5rHKtmKb6JISuUIyvrRTk1Q/view?usp=sharing"
               >
                 Delievery Information
               </a>{" "}
@@ -29,7 +30,7 @@ const Footer = () => {
             <div>
               <a
                 target="blank"
-                href="https://hellomohitsangwan.github.io/ms/projects.html"
+                href="https://drive.google.com/file/d/1WqOp_HyJ3hfndhH8SIASu_l4LI4QIwL3/view?usp=sharing"
               >
                 Privacy Policy
               </a>
@@ -37,10 +38,16 @@ const Footer = () => {
             <div>
               <a
                 target="blank"
-                href="https://hellomohitsangwan.github.io/ms/projects.html"
+                href="https://drive.google.com/file/d/1FaSvNaCj9WMYLz0LeBlcWNtaCCWBGsrd/view?usp=sharing"
               >
                 Refund and cancellation
               </a>
+            </div>
+            <div>
+              <ButtonMailto
+                label="International/Bulk orders "
+                mailto="mailto:no-reply@example.com"
+              />
             </div>
           </Col>
           <Col className="text-center , py-3">
@@ -50,7 +57,7 @@ const Footer = () => {
               <a
                 className="ml-2"
                 target="blank"
-                href="https://hellomohitsangwan.github.io/ms/projects.html"
+                href="https://instagram.com/vedhut_?utm_medium=copy_link"
               >
                 Instagram
               </a>{" "}

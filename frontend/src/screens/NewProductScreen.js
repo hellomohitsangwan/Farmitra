@@ -31,21 +31,24 @@ const NewProductScreen = ({ history }) => {
 
   const { loading, error, success } = useSelector((state) => state.newProduct);
 
-  const userInfo = useSelector((state) => state.userInfo);
+  const userLogin = useSelector((state) => state.userLogin);
+  const { userInfo } = userLogin;
 
   useEffect(() => {
     // if (!userInfo || !userInfo.isAdmin) {
     //   history.push("/");
     // }
-
-    if (success) {
-      // history.push("/admin/products");
-      dispatch({ type: NEW_PRODUCT_RESET });
-      dispatch({ type: PRODUCT_UPDATE_RESET });
-      history.push("/admin/productlist");
+    if (userInfo && userInfo.isAdmin) {
+      if (success) {
+        // history.push("/admin/products");
+        dispatch({ type: NEW_PRODUCT_RESET });
+        dispatch({ type: PRODUCT_UPDATE_RESET });
+        history.push("/admin/productlist");
+      }
+    } else {
+      history.push("/login");
     }
   }, [dispatch, success, history, userInfo]);
-
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -54,7 +57,7 @@ const NewProductScreen = ({ history }) => {
     formData.set("price", price);
     formData.set("description", description);
     formData.set("category", category);
-    formData.set("stock", countInStock);
+    formData.set("countInStock", countInStock);
     formData.set("brand", brand);
 
     images.forEach((image) => {

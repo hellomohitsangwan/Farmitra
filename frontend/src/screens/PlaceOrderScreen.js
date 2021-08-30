@@ -23,17 +23,20 @@ const PlaceOrderScreen = ({ history }) => {
   );
   const [sp, setSp] = useState(0);
   useEffect(() => {
-    if (cart.paymentMethod === "Cash on delievery") {
-      if (cart.itemsPrice < 500) {
-        setSp(100);
-      }
+    // if (cart.paymentMethod === "Cash on delievery") {
+    if ((cart.itemsPrice < 500) | (cart.itemsPrice === 500)) {
+      setSp(50);
     } else {
-      if (cart.itemsPrice > 500) {
-        setSp(0);
-      } else {
-        setSp(50);
-      }
+      setSp(0);
     }
+    // }
+    // else {
+    //   if (cart.itemsPrice > 500) {
+    //     setSp(0);
+    //   } else {
+    //     setSp(50);
+    //   }
+    // }
   }, [cart.itemsPrice, cart.paymentMethod]);
   // if (cart.paymentMethod === "Cash on delievery") {
   //   if (cart.itemsPrice > 500) {

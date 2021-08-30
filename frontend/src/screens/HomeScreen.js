@@ -21,12 +21,14 @@ const HomeScreen = ({ match }) => {
       {products?.length !== 0 ? (
         <h1>Latest Products</h1>
       ) : (
-        <>
-          <h1 className="text-center , py-3">Sorry no results found !!</h1>
-          <p className="text-center">
-            please check your spelling or try searching for something else
-          </p>
-        </>
+        !loading && (
+          <>
+            <h1 className="text-center , py-3">Sorry no results found !!</h1>
+            <p className="text-center">
+              please check your spelling or try searching for something else
+            </p>
+          </>
+        )
       )}
       {loading ? (
         <Loader />

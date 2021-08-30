@@ -46,7 +46,7 @@ const ProductScreen = ({ match, history }) => {
                 product.images.map((image) => (
                   <Carousel.Item key={image.public_id}>
                     <img
-                      className="d-block w-100"
+                      className="d-block w-100 product-images"
                       src={image.url}
                       alt={product.title}
                     />

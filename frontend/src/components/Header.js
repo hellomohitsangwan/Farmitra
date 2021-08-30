@@ -22,10 +22,10 @@ const Header = () => {
         <Container>
           {/* {" "} */}
           <Link to="/">
-            <img className="img-responsive mr-2" src={logo} alt="logo"></img>
+            <img className="img-responsive mr-4" src={logo} alt="logo"></img>
           </Link>
           <LinkContainer to="/">
-            <Navbar.Brand>Vedhut</Navbar.Brand>
+            <Navbar.Brand>VedHut</Navbar.Brand>
           </LinkContainer>{" "}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

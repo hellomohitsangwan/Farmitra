@@ -23,7 +23,6 @@ var razorpay = new Razorpay({
   key_id: RAZORPAY_ID,
   key_secret: RAZORPAY_SECRET,
 });
-
 dotenv.config();
 const app = express();
 // app.use(bodyparser.urlencoded({ extended: true }));

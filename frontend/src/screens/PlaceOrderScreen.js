@@ -91,7 +91,6 @@ const PlaceOrderScreen = ({ history }) => {
 
   return (
     <div>
-      placeorder
       {userInfo && (
         <div>
           <>
@@ -104,7 +103,7 @@ const PlaceOrderScreen = ({ history }) => {
                     <p>
                       <strong>Address:</strong>
                       {cart.shippingAddress.address},{" "}
-                      {cart.shippingAddress.city}{" "}
+                      {cart.shippingAddress.city} , {cart.shippingAddress.state}
                       {cart.shippingAddress.postalCode},{" "}
                       {cart.shippingAddress.country}
                     </p>

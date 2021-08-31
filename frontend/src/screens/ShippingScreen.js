@@ -12,6 +12,7 @@ const ShippingScreen = ({ history }) => {
   const [city, setCity] = useState("");
   const [postalCode, setPostalCode] = useState("");
   const [country, setCountry] = useState("");
+  const [state, setState] = useState("");
 
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
@@ -19,7 +20,9 @@ const ShippingScreen = ({ history }) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShippingAddress({ address, city, postalCode, country }));
+    dispatch(
+      saveShippingAddress({ address, city, postalCode, country, state })
+    );
     history.push("/payment");
   };
 
@@ -40,24 +43,37 @@ const ShippingScreen = ({ history }) => {
             placeholder="Address"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
+            className="mb-3"
           ></Form.Control>
         </Form.Group>{" "}
         <Form.Group controlId="city">
           <Form.Label>City</Form.Label>
           <Form.Control
             type="text"
-            placeholder="text"
+            placeholder="enter your city name"
             value={city}
             onChange={(e) => setCity(e.target.value)}
+            className="mb-3"
+          ></Form.Control>
+        </Form.Group>
+        <Form.Group controlId="city">
+          <Form.Label>State</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="enter your state name"
+            value={state}
+            onChange={(e) => setState(e.target.value)}
+            className="mb-3"
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId="postalCode">
-          <Form.Label>PostalCode</Form.Label>
+          <Form.Label>Pincode</Form.Label>
           <Form.Control
             type="postalCode"
-            placeholder="Postal Code"
+            placeholder="enter your pincode here"
             value={postalCode}
             onChange={(e) => setPostalCode(e.target.value)}
+            className="mb-3"
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId="country">
@@ -67,9 +83,10 @@ const ShippingScreen = ({ history }) => {
             placeholder="Country"
             value={country}
             onChange={(e) => setCountry(e.target.value)}
+            className="mb-3"
           ></Form.Control>
         </Form.Group>
-        <Button type="submit" variant="primary">
+        <Button className="my-2" type="submit" variant="primary">
           Continue
         </Button>
       </Form>

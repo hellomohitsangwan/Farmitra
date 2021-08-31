@@ -46,7 +46,7 @@ const Footer = () => {
             <div>
               <ButtonMailto
                 label="International/Bulk orders "
-                mailto="contactvedhut@gmail.com"
+                mailto="mailto:contactvedhut@gmail.com"
               />
             </div>
           </Col>

@@ -53,7 +53,12 @@ const CartScreen = ({ match, location, history }) => {
                 <ListGroup.Item>
                   <Row>
                     <Col md={2}>
-                      <Image src={item.images[0].url} fluid rounder />
+                      <Image
+                        src={item.images[0].url}
+                        fluid
+                        rounder
+                        className="cart-product-image"
+                      />
                     </Col>
                     <Col md={3}>
                       <Link to={`/product/${item.product}`}>{item.name}</Link>

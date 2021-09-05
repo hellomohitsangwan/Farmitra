@@ -65,10 +65,15 @@
 }
 
 .card-img-top {
-  width: 200px;
+  min-width: 100px;
   height: 150px;
 }
-
+@media only screen and (max-width: 600px) {
+  .card-img-top {
+    min-width: 100px;
+    height: 100px;
+  }
+}
 .ratings {
   font-size: 1.2rem;
   color: #fdcc0d;

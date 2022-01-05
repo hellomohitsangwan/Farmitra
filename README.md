@@ -1,6 +1,4 @@
-# Track news
-
-> News fetching webapp
+# Note
 
 This is the most secret roject and you're seeing this because you're trustworthy person.
 Kindly maintain the confidentiality guys. goodluck :)

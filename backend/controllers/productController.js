@@ -29,6 +29,13 @@ const getProductById = asyncHandler(async (req, res) => {
   }
 });
 
+// @desc  Fetch all products farmer created
+// @route Get /api/products/myproducts
+// @access Private and only farmer
+const getProductsOfFarmer = asyncHandler(async (req, res) => {
+  const products = await Product.find({user: req.user._id});
+  res.json(products);
+})
 // @desc  Fetch single products
 // @route Get /api/products/:id
 // @access Admin protected

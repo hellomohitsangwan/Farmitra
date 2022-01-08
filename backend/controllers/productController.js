@@ -35,7 +35,10 @@ const getProductById = asyncHandler(async (req, res) => {
 const getProductsOfFarmer = asyncHandler(async (req, res) => {
   const products = await Product.find({user: req.user._id});
   res.json(products);
+  // res.json("hy")
 })
+
+
 // @desc  Fetch single products
 // @route Get /api/products/:id
 // @access Admin protected

@@ -5,6 +5,7 @@ import {
   deleteProduct,
   updateProduct,
   createProduct,
+  getProductsOfFarmer,
 } from "../controllers/productController.js";
 import { adminMiddleware, protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
@@ -20,5 +21,5 @@ router
   .get(getProductById)
   .delete(protect, adminMiddleware, deleteProduct)
   .put(protect, adminMiddleware, updateProduct);
-
+router.route("/myproducts").get(protect, adminMiddleware, getProductsOfFarmer);
 export default router;

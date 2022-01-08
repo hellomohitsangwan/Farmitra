@@ -192,4 +192,5 @@ export {
   deleteProduct,
   updateProduct,
   createProduct,
+  getProductsOfFarmer
 };

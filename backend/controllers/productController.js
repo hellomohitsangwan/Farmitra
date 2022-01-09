@@ -1,5 +1,6 @@
 import asyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
+import User from "../models/userModel.js";
 import cloudinary from "cloudinary";
 // @desc  Fetch all products
 // @route Get /api/products
@@ -23,7 +24,12 @@ const getProducts = asyncHandler(async (req, res) => {
 const getProductById = asyncHandler(async (req, res) => {
   const product = await Product.findById(req.params.id);
   if (product) {
-    res.json(product);
+    const user = await User.findById(product.user).select("-password");
+    if(user) {
+    res.json({product , user});
+    } else {
+      res.json(product)
+    }
   } else {
     res.status(404).json({ message: "product not found" });
   }
@@ -35,7 +41,6 @@ const getProductById = asyncHandler(async (req, res) => {
 const getProductsOfFarmer = asyncHandler(async (req, res) => {
   const products = await Product.find({user: req.user._id});
   res.json(products);
-  // res.json("hy")
 })
 
 

@@ -16,7 +16,7 @@ router
   .route("/")
   .get(getProducts)
   .post(protect, adminMiddleware, createProduct);
-router.route("/myproducts").get(protect,  getProductsOfFarmer);
+router.route("/myproducts").get(protect, getProductsOfFarmer);
 router
   .route("/:id")
   .get(getProductById)

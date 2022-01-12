@@ -23,6 +23,7 @@ export const authUser = asyncHandler(async (req, res) => {
     throw new Error("Invalid email or password");
   }
 });
+
 // @desc  Register user
 // @route POST /api/users
 // @access Public

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { LinkContainer } from "react-router-bootstrap";
 import { Table, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
@@ -11,10 +11,13 @@ import {
   createProduct,
 } from "../actions/productActions";
 import { PRODUCT_CREATE_RESET } from "../constants/productConstants";
+import MyProductData from "../utils/FarmerMyProductsRequest";
 // import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 
 const ProductListScreen = ({ history, match }) => {
   //   const pageNumber = match.params.pageNumber || 1
+  const [myProducts, setMyProducts] = useState([]);
+  const [newLoading, setNewLoading] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -38,6 +41,26 @@ const ProductListScreen = ({ history, match }) => {
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
+
+  const getData = async () => {
+    try {
+      const response = await MyProductData(userInfo.token);
+      if(response){
+        setMyProducts(response)
+      }
+      setNewLoading(false)
+    } catch (error) {
+      setNewLoading(false)
+      console.log(error);
+    }
+    
+  }
+
+  useEffect(()=>{
+    if(userInfo?.token && userInfo?.isAdmin){
+        getData();
+    }
+  },[userInfo])
 
   useEffect(() => {
     dispatch({ type: PRODUCT_CREATE_RESET });
@@ -110,7 +133,7 @@ const ProductListScreen = ({ history, match }) => {
               </tr>
             </thead>
             <tbody>
-              {products.map((product) => (
+              {myProducts.map((product) => (
                 <tr key={product._id}>
                   <td>{product._id}</td>
                   <td>{product.name}</td>

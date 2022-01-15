@@ -123,6 +123,12 @@ const ProductScreen = ({ match, history }) => {
               </ListGroup>
             </Card>
           </Col>
+          <Col>
+            <p>{product?.user?.name}</p>
+            <p>{product?.user?.email}</p>
+            <p>{product?.user?.createdAt}</p>
+            <p>{product?.user?.updatedAt}</p>
+          </Col>
         </Row>
       )}
     </>

@@ -1,11 +1,12 @@
 import asyncHandler from "express-async-handler";
-const { doesNotMatch } = require('assert');
-const {spawn} = require('child_process');
-const { type, default: res } = require('express/lib/response');
+import {spawn} from "child_process"
+// const { doesNotMatch } = require('assert');
+// const {spawn} = require('child_process');
+// const { type, default: res } = require('express/lib/response');
 
 export const chatBotController = asyncHandler(async (req , res) => {
 
-    var dataToSend;
+    // var dataToSend;
     const python = spawn('python', ['main.py',req.body.command]);
         python.stdout.on('data', (data)=>{
         var parsedData = JSON.parse(data.toString());

@@ -12,7 +12,7 @@ import { protect } from "./middleware/authMiddleware.js";
 import Razorpay from "razorpay";
 import Order from "./models/orderModel.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
-import chatBotRoutes from "./routes/chatBotRoutes"
+import chatBotRoutes from "./routes/chatBotRoutes.js"
 import cloudinary from "cloudinary";
 // import bodyparser from "body-parser";
 import fileUpload from "express-fileupload";

@@ -1,7 +1,7 @@
 import "./App.css";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import { Container } from "react-bootstrap";
-import Footer from "./components/Footer";
+// import Footer from "./components/Footer";
 import HomeScreen from "./screens/HomeScreen";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import ProductScreen from "../src/screens/ProductScreen";
@@ -22,10 +22,11 @@ import UserEditScreen from "./screens/USerEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import MainFooter from "./components/MainFooter";
 import NewProductScreen from "./screens/NewProductScreen";
+import LandingScreen  from "./screens/LandingScreen";
 const App = () => {
   return (
     <Router>
-      <Header />
+      {/* <Header /> */}
       <main className="py-4">
         <Container>
           <Route path="/product/:id" component={ProductScreen} />
@@ -46,7 +47,9 @@ const App = () => {
           <Route path="/admin/orderlist" component={OrderListScreen} />
           <Route path="/search/:keyword" component={HomeScreen} />
           <Route path="/" component={HomeScreen} exact />
+          <Route path="/LandingScreen" component={LandingScreen} exact />
         </Container>
+        
       </main>
 
       <MainFooter />

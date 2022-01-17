@@ -16,7 +16,6 @@ import OrderScreen from "./screens/OrderScreen";
 import UserListScreen from "./screens/UserListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
-
 import Test from "./components/Test";
 import UserEditScreen from "./screens/USerEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
@@ -48,7 +47,6 @@ const App = () => {
           <Route path="/" component={HomeScreen} exact />
         </Container>
       </main>
-
       <MainFooter />
     </Router>
   );

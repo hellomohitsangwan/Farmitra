@@ -14,6 +14,7 @@ import Order from "./models/orderModel.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
 import chatBotRoutes from "./routes/chatBotRoutes.js"
 import cloudinary from "cloudinary";
+import morgan from "morgan";
 // import bodyparser from "body-parser";
 import fileUpload from "express-fileupload";
 // const cloudinary = require("cloudinary");
@@ -29,6 +30,7 @@ dotenv.config();
 const app = express();
 // app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(morgan('dev'))
 app.use(fileUpload());
 cloudinary.config({
   cloud_name: "djfh8ecu4",

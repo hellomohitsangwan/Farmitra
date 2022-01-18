@@ -1,5 +1,3 @@
-/*---------------------- CSS for screen------------------ */
-
 /* fonts */
 @import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Courgette&family=Poppins:wght@300&display=swap");
 
@@ -176,62 +174,103 @@ parallax img#mountains_behind {
   text-align: justify;
 }
 
-/* showcase */
-
-.row {
-  margin: 100px;
-  height: 350px;
-  /* border: 2px red solid; */
-  background: #fff;
-}
-
-.row1 .img-box,
-.row2 .text-box {
-  float: left;
-  width: 50%;
-}
-
-.row2 .img-box,
-.row1 .text-box {
-  float: right;
-  width: 50%;
-}
-
-.row .img-box {
-  /* border: 2px solid green; */
-  height: 100%;
-}
-
-.row .text-box {
-  /* border: 2px solid rebeccapurple; */
-  padding: 3rem;
-}
-
-.row1 .text-box {
-  background: #93bc52;
-}
-
-.row2 .text-box {
-  background: #7e4f47;
-}
-
-.row .img-box img {
-  display: inline-block;
+.showcase::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  height: 100%;
-  object-fit: contain;
+  height: 100px;
+  background: linear-gradient(to top, #ec790e, transparent);
+  z-index: 1000;
 }
 
-.img-box1 {
-  background: #93bc52;
-  /* background-color: #90943f; */
+/* ---------------CARD--------------- */
+
+.box1 {
+  background-color: #93bc52;
 }
 
-.img-box2 {
-  background: #7e4f47;
+.box2 {
+  background-color: #7e4f47;
 }
 
-/* footer */
+/* cards */
+.main {
+  max-width: 80vw;
+  margin: 0 auto;
+}
+
+.main h1 {
+  font-size: 24px;
+  font-weight: 400;
+  text-align: center;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.cards_item {
+  display: flex;
+  padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+@media (min-width: 56rem) {
+  .cards_item {
+    width: 50%;
+  }
+}
+
+.card-me {
+  border-radius: 1rem;
+  /* box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25); */
+  /* box-shadow: 5px 5px 20px 0px rgba(240, 6, 6, 0.61); */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(30px);
+}
+
+.card_content {
+  padding: 1rem;
+}
+
+.card_title {
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0px;
+}
+
+.card_text {
+  color: #ffffff;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  font-weight: 400;
+}
 
 /* ///////////////////////-----------FOOTER-------------------///////////////////// */
 

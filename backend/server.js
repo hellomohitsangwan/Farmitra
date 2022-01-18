@@ -12,7 +12,9 @@ import { protect } from "./middleware/authMiddleware.js";
 import Razorpay from "razorpay";
 import Order from "./models/orderModel.js";
 import uploadRoutes from "./routes/uploadRoutes.js";
+import chatBotRoutes from "./routes/chatBotRoutes.js"
 import cloudinary from "cloudinary";
+import morgan from "morgan";
 // import bodyparser from "body-parser";
 import fileUpload from "express-fileupload";
 // const cloudinary = require("cloudinary");
@@ -28,6 +30,7 @@ dotenv.config();
 const app = express();
 // app.use(bodyparser.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(morgan('dev'))
 app.use(fileUpload());
 cloudinary.config({
   cloud_name: "djfh8ecu4",
@@ -41,7 +44,8 @@ app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
 app.use("/api/upload", uploadRoutes);
-app.use("api/recom" , recommendationRoutes);
+app.use("/api/recom" , recommendationRoutes);
+app.use("/api/chatbot" , chatBotRoutes)
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 if (process.env.NODE_ENV === "production") {

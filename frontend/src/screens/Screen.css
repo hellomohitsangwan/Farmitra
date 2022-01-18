@@ -240,15 +240,15 @@ img {
 
 .card-me {
   border-radius: 1rem;
-  /* box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25); */
-  /* box-shadow: 5px 5px 20px 0px rgba(240, 6, 6, 0.61); */
+  box-shadow: 0 20px 40px -14px rgba(9, 233, 158, 0.25);
+  box-shadow: 5px 5px 20px 0px rgba(24, 241, 4, 0.61);
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-.card:hover {
-  transform: translateY(30px);
+.card-me:hover {
+  transform: translateY(20px);
 }
 
 .card_content {

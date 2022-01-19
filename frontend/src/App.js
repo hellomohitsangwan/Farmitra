@@ -17,6 +17,7 @@ import UserListScreen from "./screens/UserListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
 import Test from "./components/Test";
+import Header from "./components/Header";
 import UserEditScreen from "./screens/USerEditScreen";
 import ProductListScreen from "./screens/ProductListScreen";
 import MainFooter from "./components/MainFooter";
@@ -25,7 +26,7 @@ import LandingScreen from "./screens/LandingScreen";
 const App = () => {
   return (
     <Router>
-      {/* <Header /> */}
+      <Header />
       <main>
         <Container>
           <Route path="/product/:id" component={ProductScreen} />

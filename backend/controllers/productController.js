@@ -135,33 +135,6 @@ const updateProduct = asyncHandler(async (req, res) => {
 // @route PUT /api/products
 // @access Admin protected
 const createProduct = asyncHandler(async (req, res, next) => {
-  // const product = new Product({
-  //   name: "sample name",
-  //   price: 10,
-  //   user: req.user._id,
-  //   image: "/images/sample.jpeg",
-  //   brand: "samle brand",
-  //   category: "samle category",
-  //   countInStock: 2,
-  //   numReviews: 0,
-  //   description: "sample description",
-  //   images: [
-  //     {
-  //       public_id: "products/wmoa49q9e70ze9xtcra2",
-  //       url: "https://res.cloudinary.com/bookit/image/upload/v1606293153/products/wmoa49q9e70ze9xtcra2.jpg",
-  //     },
-  //     {
-  //       public_id: "products/i0k1wdwi5hrpmzwxvsds",
-  //       url: "https://res.cloudinary.com/bookit/image/upload/v1606293152/products/i0k1wdwi5hrpmzwxvsds.jpg",
-  //     },
-  //     {
-  //       public_id: "products/bshmuo9qisfhz4azvnsd",
-  //       url: "https://res.cloudinary.com/bookit/image/upload/v1606293153/products/bshmuo9qisfhz4azvnsd.jpg",
-  //     },
-  //   ],
-  // });
-  // const createdProduct = await product.save();
-  // res.json(createdProduct);
 
   let images = [];
   if (typeof req.body.images === "string") {

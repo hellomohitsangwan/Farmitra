@@ -18,11 +18,14 @@ import {
   listProductDetails,
 } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
+  const [recom, setRecom] = useState("");
+  const [rl , srl] = useState(false)
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -39,8 +42,8 @@ const ProductScreen = ({ match, history }) => {
   const { loading, product, error } = productDetails;
   useEffect(() => {
     if (successProductReview) {
-      setRating(0)
-      setComment('')
+      setRating(0);
+      setComment("");
     }
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match, successProductReview]);
@@ -48,7 +51,29 @@ const ProductScreen = ({ match, history }) => {
   const submitHandler = () => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
+  const postRecom = async () => {
+    srl(true)
+    try {
+      const config = {
+        headers: {
+          "content-type": "application/json",
+          Authorization: `Bearer ${userInfo.token}`
+        },
+      };
+      const { data } = await axios.post(
+        "/api/recom",
+        {  "recommendation": recom,
+        "farmer_id": product.user._id
+      },
+        config
+      );
+      console.log(data.message)
+    } catch (error) {
+      console.log(error.response.data.message)
+    }
+    srl(false)
 
+  };
   const reviewSubmitHandler = (e) => {
     e.preventDefault();
     dispatch(
@@ -165,12 +190,21 @@ const ProductScreen = ({ match, history }) => {
               <p>{product?.user?.createdAt}</p>
               <p>{product?.user?.updatedAt}</p>
             </Col>
+            <Col>
+              <input type="text" onChange={(e) => setRecom(e.target.value)} />
+              <Button
+                disabled={!product?.user?._id || !userInfo || !recom || rl}
+                onClick={postRecom}
+              >Post Recommendation</Button>
+            </Col>
           </Row>
 
           <Row>
             <Col md={6}>
               <h2>Reviews</h2>
-              {product?.product?.reviews.length === 0 && <Message>No Reviews</Message>}
+              {product?.product?.reviews.length === 0 && (
+                <Message>No Reviews</Message>
+              )}
               <ListGroup variant="flush">
                 {product?.product?.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>

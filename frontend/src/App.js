@@ -26,9 +26,10 @@ import LandingScreen from "./screens/LandingScreen";
 const App = () => {
   return (
     <Router>
-      <Header />
       <main>
-        <Container>
+        {/* <Container> */}
+          <Route path="/" component={LandingScreen} exact />
+          <Header />
           <Route path="/product/:id" component={ProductScreen} />
           <Route path="/test" component={Test} />
           <Route path="/shipping" component={ShippingScreen} />
@@ -46,8 +47,8 @@ const App = () => {
           <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
           <Route path="/admin/orderlist" component={OrderListScreen} />
           <Route path="/search/:keyword" component={HomeScreen} />
-          <Route path="/" component={HomeScreen} exact />
-        </Container>
+          <Route path="/home" component={HomeScreen} exact />
+        {/* </Container> */}
         <Route path="/LandingScreen" component={LandingScreen} exact />
       </main>
       <MainFooter />

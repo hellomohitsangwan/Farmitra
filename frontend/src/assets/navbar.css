@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+:root {
+  --primaryLightColor: #d4e6a5;
+  --primaryColor: #476a2e;
+  --primaryDarkColor: #c02c03;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBackground: #f1f5f8;
+  --mainOverlay: rgba(35, 10, 36, 0.4);
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #afafaf;
+  --mainRed: #bd0303;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 0.3rem;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+  --mainBorderRadius: 0.25rem;
+  --smallWidth: 85vw;
+  --maxWidth: 40rem;
+  --fullWidth: 1170px;
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
+.navbar {
+    font-family: poppins;
+  /* background: var(--mainWhite); */
+
+  height: 7rem;
+  display: flex;
+  align-items: center;
+}
+.nav-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: var(--smallWidth);
+  margin: 0 auto;
+  max-width: var(--fullWidth);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  /* padding: -11px; */
+}
+.nav-links a {
+  color: black;
+  text-transform: capitalize;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 24px;
+  padding: 0.25rem 0.5rem;
+  transition: var(--mainTransition);
+}
+.nav-links a:hover {
+  color: var(--primaryColor);
+}
+.logo {
+  width: 12rem;
+}
+.info{
+  z-index: 9999;
+  position: relative;
+}
+.info ul{
+  position: absolute;
+  background: white;
+  margin-top: 10px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  opacity: 0;
+  /* pointer-events: 0; */
+  transform: translateY(-10px);
+  transition: all 0.4s ease;
+}
+
+.info li{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.info li:hover{
+  background-color: #d4e6a5;
+}
+
+.info-button{
+  font-family: poppins;
+  margin-left: 10px;
+  margin-right: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.logout{
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.info button:focus + ul{
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}

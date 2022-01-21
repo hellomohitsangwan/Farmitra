@@ -216,3 +216,25 @@ export const createProductReview = asyncHandler(async (req, res) => {
     throw new Error('Product not found')
   }
 })
+
+// @desc    Create a product for bot
+// @route   POST /api/products
+// @access  Private/Admin
+export const createProductForBot = asyncHandler(async (req, res) => {
+  const {name , price , quantity} = req.body
+
+  const product = new Product({
+    name: name,
+    price: price,
+    user: req.user._id,
+    image: '/images/sample.jpg',
+    brand: 'Sample brand',
+    category: 'Sample category',
+    countInStock: quantity,
+    numReviews: 0,
+    description: 'Sample description',
+  })
+
+  const createdProduct = await product.save()
+  res.status(201).json(createdProduct)
+})

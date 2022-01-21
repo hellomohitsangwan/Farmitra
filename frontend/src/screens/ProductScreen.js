@@ -67,12 +67,11 @@ const ProductScreen = ({ match, history }) => {
       },
         config
       );
-      console.log(data.message)
+      console.log(data.response.msg)
     } catch (error) {
       console.log(error.response.data.message)
     }
     srl(false)
-
   };
   const reviewSubmitHandler = (e) => {
     e.preventDefault();

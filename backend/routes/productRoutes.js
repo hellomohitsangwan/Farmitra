@@ -6,7 +6,8 @@ import {
   updateProduct,
   createProduct,
   getProductsOfFarmer,
-  createProductReview
+  createProductReview,
+  createProductForBot,
 } from "../controllers/productController.js";
 import { adminMiddleware, protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
@@ -17,8 +18,11 @@ router
   .route("/")
   .get(getProducts)
   .post(protect, adminMiddleware, createProduct);
+router
+  .route("/chatbot/create")
+  .post(protect, adminMiddleware, createProductForBot);
 router.route("/myproducts").get(protect, getProductsOfFarmer);
-router.route('/:id/reviews').post(protect, createProductReview)
+router.route("/:id/reviews").post(protect, createProductReview);
 router
   .route("/:id")
   .get(getProductById)

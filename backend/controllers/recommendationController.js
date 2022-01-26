@@ -34,10 +34,8 @@ export const createRecommendation = asyncHandler(async (req, res) => {
   }
 });
 
-
 // get all recomdation made to farmers by ngos
 export const listRecForFarmer = asyncHandler(async (req , res) => {
-
     const recoms = await Recommendation.find({to : req.user._id});
     let farmers = []
     for (let i = 0; i < recoms.length; i++) {

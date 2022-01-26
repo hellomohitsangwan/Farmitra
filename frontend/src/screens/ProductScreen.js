@@ -43,7 +43,7 @@ const ProductScreen = ({ match, history }) => {
   useEffect(() => {
     if (successProductReview) {
       setRating(0);
-      setComment("");
+    setComment("");
     }
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match, successProductReview]);

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { listOrders } from "../actions/orderAction";
+import "./OrderListScreen.css";
 
 const OrderListScreen = ({ history }) => {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ const OrderListScreen = ({ history }) => {
       ) : error ? (
         <Message variant="danger">{error}</Message>
       ) : (
-        <Table striped bordered hover responsive className="table-sm">
+        <Table bordered hover responsive className="table-sm ">
           <thead>
             <tr>
               <th>ID</th>
@@ -39,11 +40,11 @@ const OrderListScreen = ({ history }) => {
               <th>DATE</th>
               <th>TOTAL</th>
               <th>PAID</th>
-              <th>DELIVERED</th>
+              <th>AVAILABLE</th>
               <th></th>
             </tr>
           </thead>
-          <tbody>
+          <tbody class="blur">
             {orders.map((order) => (
               <tr key={order._id}>
                 <td>{order._id}</td>
@@ -54,19 +55,26 @@ const OrderListScreen = ({ history }) => {
                   {order.isPaid ? (
                     order.paidAt.substring(0, 10)
                   ) : (
-                    <i className="fas fa-times" style={{ color: "red" }}></i>
+                    <i
+                      className="fas fa-times-circle"
+                      style={{ color: "black" }}
+                    ></i>
                   )}
                 </td>
                 <td>
                   {order.isDelivered ? (
                     order.deliveredAt.substring(0, 10)
                   ) : (
-                    <i className="fas fa-times" style={{ color: "red" }}></i>
+                    // <i className="fas fa-times" style={{ color: "red" }}></i>
+                    <i
+                      className="fas fa-times-circle"
+                      style={{ color: "black" }}
+                    ></i>
                   )}
                 </td>
                 <td>
                   <LinkContainer to={`/order/${order._id}`}>
-                    <Button variant="light" className="btn-sm">
+                    <Button variant="light" className="btn-sm button-me">
                       Details
                     </Button>
                   </LinkContainer>

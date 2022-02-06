@@ -28,30 +28,30 @@ const App = () => {
     <Router>
       <main>
         {/* <Container> */}
-          <Route path="/" component={LandingScreen} exact />
-          <Header />
-          <Route path="/product/:id" component={ProductScreen} />
-          <Route path="/test" component={Test} />
-          <Route path="/shipping" component={ShippingScreen} />
-          <Route path="/payment" component={PaymentScreen} />
-          <Route path="/placeorder" component={PlaceOrderScreen} />
-          <Route path="/order/:id" component={OrderScreen} />
-          <Route path="/cart/:id?" component={CartScreen} />
-          <Route path="/login" component={LoginScreen} />
-          <Route path="/register" component={RegisterScreen} />
-          <Route path="/profile" component={ProfileScreen} />
-          <Route path="/admin/userlist" component={UserListScreen} />
-          <Route path="/admin/user/:id/edit" component={UserEditScreen} />
-          <Route path="/admin/productlist" component={ProductListScreen} />
-          <Route path="/admin/product/new" component={NewProductScreen} />
-          <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
-          <Route path="/admin/orderlist" component={OrderListScreen} />
-          <Route path="/search/:keyword" component={HomeScreen} />
-          <Route path="/home" component={HomeScreen} exact />
+        <Route path="/" component={LandingScreen} exact />
+        <Header />
+        <Route path="/product/:id" component={ProductScreen} />
+        <Route path="/test" component={Test} />
+        <Route path="/shipping" component={ShippingScreen} />
+        <Route path="/payment" component={PaymentScreen} />
+        <Route path="/placeorder" component={PlaceOrderScreen} />
+        <Route path="/order/:id" component={OrderScreen} />
+        <Route path="/cart/:id?" component={CartScreen} />
+        <Route path="/login" component={LoginScreen} />
+        <Route path="/register" component={RegisterScreen} />
+        <Route path="/profile" component={ProfileScreen} />
+        <Route path="/admin/userlist" component={UserListScreen} />
+        <Route path="/admin/user/:id/edit" component={UserEditScreen} />
+        <Route path="/admin/productlist" component={ProductListScreen} />
+        <Route path="/admin/product/new" component={NewProductScreen} />
+        <Route path="/admin/product/:id/edit" component={ProductEditScreen} />
+        <Route path="/admin/orderlist" component={OrderListScreen} />
+        <Route path="/search/:keyword" component={HomeScreen} />
+        <Route path="/home" component={HomeScreen} exact />
         {/* </Container> */}
-        <Route path="/LandingScreen" component={LandingScreen} exact />
       </main>
       <MainFooter />
+      <Route path="/LandingScreen" component={LandingScreen} exact />
     </Router>
   );
 };

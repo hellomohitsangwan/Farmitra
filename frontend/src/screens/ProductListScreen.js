@@ -4,6 +4,7 @@ import { Table, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import "./ProductListScreen.css";
 // import Paginate from '../components/Paginate'
 import {
   listProducts,
@@ -45,22 +46,21 @@ const ProductListScreen = ({ history, match }) => {
   const getData = async () => {
     try {
       const response = await MyProductData(userInfo.token);
-      if(response){
-        setMyProducts(response)
+      if (response) {
+        setMyProducts(response);
       }
-      setNewLoading(false)
+      setNewLoading(false);
     } catch (error) {
-      setNewLoading(false)
+      setNewLoading(false);
       console.log(error);
     }
-    
-  }
+  };
 
-  useEffect(()=>{
-    if(userInfo?.token && userInfo?.isAdmin){
-        getData();
+  useEffect(() => {
+    if (userInfo?.token && userInfo?.isAdmin) {
+      getData();
     }
-  },[userInfo])
+  }, [userInfo]);
 
   useEffect(() => {
     dispatch({ type: PRODUCT_CREATE_RESET });

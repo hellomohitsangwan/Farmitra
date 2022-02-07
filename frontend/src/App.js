@@ -23,6 +23,7 @@ import ProductListScreen from "./screens/ProductListScreen";
 import MainFooter from "./components/MainFooter";
 import NewProductScreen from "./screens/NewProductScreen";
 import LandingScreen from "./screens/LandingScreen";
+import DashboardScreen from "./screens/DashboardScreen";
 const App = () => {
   return (
     <Router>
@@ -31,6 +32,7 @@ const App = () => {
         <Route path="/" component={LandingScreen} exact />
         <Header />
         <Route path="/product/:id" component={ProductScreen} />
+        <Route path="/dashboard" component={DashboardScreen}/>
         <Route path="/test" component={Test} />
         <Route path="/shipping" component={ShippingScreen} />
         <Route path="/payment" component={PaymentScreen} />

@@ -44,11 +44,11 @@ const Header = () => {
           )}
           {userInfo && userInfo.isAdmin &&(
             <div>
-              <Link to='/home'>Dashboard</Link>
-              <br />
+              <Link to='/dashboard'>Dashboard</Link>
+              {/* <br />
               <Link to="/admin/productlist">My Products</Link>
               <br />
-              <Link to="/admin/orderList">Orders</Link>
+              <Link to="/admin/orderList">Orders</Link> */}
             </div>
           )}
           <li><Link to="/cart"><img src={cart} alt="" width={"48px"} /></Link></li>
@@ -62,6 +62,7 @@ const Header = () => {
 };
 
 export default Header;
+
 
 
 

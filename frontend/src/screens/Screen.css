@@ -56,6 +56,13 @@ header .logo {
   text-decoration: none;
   display: inline-flex;
 }
+.nav-item{
+  list-style-type: none;
+}
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
 
 header ul {
   display: flex;
@@ -351,7 +358,11 @@ heading {
   object-fit: cover;
   opacity: 0.8;
 }
-
+@media screen and (min-width: 1300px){
+  .card-me{
+    max-width: 290px;
+  }
+}
 @media (max-width: 1500px) {
   .about-us-img-wrapper {
     grid-row: 3 / -1;

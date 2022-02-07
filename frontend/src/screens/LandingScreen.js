@@ -1,5 +1,6 @@
 import React from "react";
 import "./Screen.css";
+import { Link } from "react-router-dom";
 import farmBG from "../images/5.png";
 import transparentBG from "../images/p_bgTrans.png";
 import windMill from "../images/3.png";
@@ -63,9 +64,11 @@ const LandingScreen = () => {
         >
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0" />
           <li className="nav-item">
-            <a href="#" className="active">
-              Home
-            </a>
+            <Link to={"/home"}>
+              <a href="#" className="active">
+                Home
+              </a>
+            </Link>
           </li>
           <li className="nav-item">
             <a href="#">About</a>

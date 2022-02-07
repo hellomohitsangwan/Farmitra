@@ -25,8 +25,22 @@ ul {
 }
 a {
   text-decoration: none;
+  font-size: 28px;
+  color: black;
+  text-transform: capitalize;
+  display: inline-block;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  font-size: 24px;
+  padding: 0.25rem 0.5rem;
+  transition: var(--mainTransition);
 }
-.navbar {
+a:hover{
+  color: var(--primaryColor);
+}
+.navbar1 {
     font-family: poppins;
   /* background: var(--mainWhite); */
 

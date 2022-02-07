@@ -892,3 +892,163 @@ footer p {
   position: relative;
   right: 30px;
 }
+
+
+
+
+/* CART SCREEN ******************* */
+/* CART SCREEN ******************* */
+/* CART SCREEN ******************* */
+/* CART SCREEN ******************* */
+/* CART SCREEN ******************* */
+/* CART SCREEN ******************* */
+
+.cart-title{
+  position: relative;
+  margin-top: 20px;
+  right: -100px;
+  font-size: 40px;
+}
+
+.green-underline{
+  position: relative;
+  top: 10px;
+  right: -250px;
+  width: 120px;
+  height: 4px;
+  background: #6d8b56;
+}
+.cart-remove{
+  position: relative;
+  top: -60px;
+  right: -300px;
+  color: #000000;
+  width: 124px;
+  height: 29px;
+  background: #CB5D4E;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.cart-remove:hover{
+  background: #df5f4e;
+}
+.cart-price{
+  font-size: 18px;
+  font-weight: 600;
+}
+
+
+.remove{
+  text-align: center;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+}
+
+.cart-image{
+  position: relative; 
+  top: 20px;
+  width: 200px;
+  border-radius: 10px;
+  top: 50px;
+  right: -100px;
+}
+.cart-status{
+  position: relative;
+  top: -60px;
+  right: -330px;
+}
+
+.cart-product-title{
+  position: relative;
+  color: #000000; 
+  font-family: poppins; 
+  font-size: 24px;
+  font-weight: 600;
+  top: -70px;
+  right: -330px;
+}
+
+.black-underline{
+  position: relative;
+  top: 230px;
+  right: -100px;
+  width: 650px;
+  height: 2px;
+  background: #000000;
+}
+
+.cart-background{
+  position: absolute;
+  bottom: 0px;
+  right: 80px;
+}
+
+.checkout-card{
+  /* Rectangle 8 */
+
+position: absolute;
+width: 353px;
+height: 293px;
+left: 880px;
+top: 131px;
+
+background: #EDF5E4;
+border-radius: 10px;
+
+}
+
+.checkout-btn{
+  position: relative;
+  right: -55px;
+  font-size: 18px;
+  width: 236px;
+  height: 37px;
+  background: #6D8B56;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+.checkout-btn:hover{
+  background: #6e9451;
+}
+
+.checkout-title{
+  font-size: 24px;
+  font-weight: 500;
+  align-items: center;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.checkout-underline{
+  /* position: absolute; */
+  width: 353px;
+  height: 1px;
+  /* top: 85px; */
+  margin-top: 20px; 
+  margin-bottom: 20px; 
+
+  background: #000000;
+}
+
+.subtotal{
+  font-size: 18px;
+}
+
+.total-amount{
+  font-size: 18px;
+}
+
+.subtotal{
+  position: relative;
+  right: -30px;
+}
+.total-amount{
+  position: relative;
+  right: -30px;
+}
+
+.cart-kg{
+  color: #989292;
+  font-size: 12px;
+}

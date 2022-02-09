@@ -9,6 +9,7 @@ import {
   createProductReview,
   createProductForBot,
   getTopProducts,
+  getReviewOfFarmer,
 } from "../controllers/productController.js";
 import { adminMiddleware, protect } from "../middleware/authMiddleware.js";
 const router = express.Router();
@@ -19,6 +20,7 @@ router
   .route("/")
   .get(getProducts)
   .post(protect, adminMiddleware, createProduct);
+router.route("/myreviews").get(protect , adminMiddleware , getReviewOfFarmer )
 router
   .route("/chatbot/create")
   .post(protect, adminMiddleware, createProductForBot);

@@ -43,6 +43,19 @@ const getProductsOfFarmer = asyncHandler(async (req, res) => {
   res.json(products);
 })
 
+// @desc  Fetch all reviews for particular farmer's product
+// @route Get /api/products/myreviews
+// @access Private and only farmer
+export const getReviewOfFarmer = asyncHandler(async (req , res) => {
+  const product = await Product.findById(req.body.id);
+  if (product) {
+    await product.remove();
+    res.json( product.reviews );
+  } else {
+    res.status(404);
+    throw new Error("product not found");
+  }
+})
 
 // @desc  Fetch single products
 // @route Get /api/products/:id

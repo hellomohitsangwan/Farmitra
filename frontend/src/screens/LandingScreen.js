@@ -184,7 +184,7 @@ const LandingScreen = () => {
             <div className="about-us">
               <div className="section-header">
                 <h1 className="section-heading problems-heading">Problems</h1>
-                <div className="underline"></div>
+                {/* <div className="underline"></div> */}
               </div>
               <div className="services">
                 <div className="service">
@@ -300,7 +300,7 @@ const LandingScreen = () => {
             <div className="main showcase" />
             <div className="section-header">
               <h1 className="section-heading about-heading">About Us</h1>
-              <div className="underline"></div>
+              {/* <div className="underline"></div> */}
             </div>
             <ul className="cards container">
               <li className="cards_item">

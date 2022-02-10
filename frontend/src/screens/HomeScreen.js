@@ -25,9 +25,20 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyword]);
   return (
     <>
-    <Slider/>
+      <Slider />
+      <div className="allProducts-title">
+        <p>All Products</p>
+        <button className="btn" onClick={executeScroll}>
+          <img src={downArrow} alt="" className="arrow" />
+        </button>
+        <div className="ref" ref={myRef}></div>
+        <div className="gap1"></div>
+      </div>
       {products?.length !== 0 ? (
-        <h1>Latest Products</h1>
+        <div className="latest">
+          <p className="latest-product">Latest Products</p>
+          <div className="underline1"></div>
+        </div>
       ) : (
         !loading && (
           <>

@@ -114,3 +114,164 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+.recom-image {
+  z-index: -99999;
+  position: absolute;
+  width: 600px;
+  height: 500px;
+  left: 900px;
+  top: 246px;
+}
+.recommedation {
+  /* position: absolute; */
+  width: 306px;
+  height: 48px;
+  left: 265px;
+  top: 149px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 32px;
+  line-height: 48px;
+  color: #000000;
+}
+.underline {
+  /* position: absolute; */
+  width: 120px;
+  height: 3px;
+  left: 358px;
+  top: 200px;
+
+  background: #6d8b56;
+}
+.recom-main {
+  /* position: absolute; */
+  width: 700px;
+  height: 80px;
+  left: 68px;
+  top: 234px;
+
+  background: #c4c4c4;
+  border-radius: 10px;
+}
+.recom {
+  position: relative;
+  width: 700px;
+  height: 80px;
+  left: 60px;
+  top: 150px;
+
+  background: #c4c4c4;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+.info {
+  padding: 20px;
+}
+
+.product-list {
+  padding: 10px;
+  width: 378px;
+  height: 580px;
+  margin: 20px;
+  background: #eeeded;
+  border-radius: 10px;
+}
+
+.card-img-top {
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  width: 320px;
+  height: 209px;
+  border-radius: 20px;
+}
+
+.card-title {
+  font-family: poppins;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+.card-body {
+  margin-left: 20px;
+}
+.price-name {
+  display: flex;
+}
+
+.card-text {
+  position: relative;
+  top: 8px;
+  right: -80px;
+}
+
+.kg {
+  font-size: 12px;
+  color: #6a6363;
+}
+
+.dot {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  /* left: 358px; */
+  top: 9px;
+  margin-right: 10px;
+  background: #6a6363;
+}
+
+.added {
+  display: flex;
+  font-size: 18px;
+}
+
+.viewDetails {
+  font-size: 22px;
+  cursor: pointer;
+  border: none;
+  border-radius: 10px;
+  width: 273px;
+  height: 57px;
+  background-color: #6d8b56;
+  color: #eeeded;
+}
+.viewDetails:hover {
+  transition: all 0.2s ease-in;
+  background-color: #608047;
+}
+.btn {
+  font-size: 22px;
+  color: #fff;
+}
+
+.viewDetails-btn {
+  text-align: center;
+}
+
+.ratings{
+  font-size: 18px;
+  color: #6A6363;
+}
+
+.star{
+  position: relative;
+  top: 2px;
+  right: 55px;
+  color: white;
+}
+.rating{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.rating-review{
+  position: relative;
+  right: 15px;
+}

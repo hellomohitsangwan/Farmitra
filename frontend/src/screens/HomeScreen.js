@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
+import Slider from "../components/Slider";
 //redux files
 import { listProducts } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
@@ -18,6 +19,7 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyword]);
   return (
     <>
+    <Slider />
       {products?.length !== 0 ? (
         <h1>Latest Products</h1>
       ) : (

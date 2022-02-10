@@ -34,7 +34,7 @@ const Product = ({ product }) => {
               text={` ${product.numReviews} Rating and Reviews`}
             /> */}
           </div>
-          <div className="gap"></div>
+          {/* <div className="gap"></div> */}
           <div className="added">
             <div className="dot"></div>
             <p className="added">
@@ -43,13 +43,13 @@ const Product = ({ product }) => {
               {product.updatedAt.split("-")[0]}
             </p>
           </div>
-          <div className="gap"></div>
+          {/* <div className="gap"></div> */}
           <div className="added">
             <div className="dot"></div>
-            <p>Fresh and Healthy</p>
+            <p className="fresh">Fresh and Healthy</p>
           </div>
-          <div className="gap"></div>
-          <div className="gap"></div>
+          {/* <div className="gap"></div> */}
+          {/* <div className="gap"></div> */}
           <div className="viewDetails-btn">
             <Link to={`/product/${product._id}`} className="btn btn-block">
             <button className="viewDetails">View Details</button>

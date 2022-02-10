@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart, removeFromCart } from "../actions/cartActions";
-import cartBackground from "../assets/cartBackground.svg"
+import cartBackground from "../assets/cartBackground.svg";
 import "./Screen.css";
 import {
   Row,
@@ -43,7 +43,9 @@ const CartScreen = ({ match, location, history }) => {
   console.log(cartItems);
   return (
     <div>
-    <div className="cart-background"><img src={cartBackground} alt="" /></div>
+      <div className="cart-background">
+        <img src={cartBackground} alt="" />
+      </div>
       <Row>
         <Col md={8}>
           <h1 className="cart-title">Your Shopping cart</h1>
@@ -54,28 +56,27 @@ const CartScreen = ({ match, location, history }) => {
               <Link to="/home">Go Back</Link>
             </Message>
           ) : (
-
-              <ListGroup variant="flush">
-                {cartItems.map((item) => (
-                  <ListGroup.Item>
-                    <Row>
-                      <Col md={2}>
-                        <Image
-                          src={item.images[0].url}
-                          fluid
-                          rounder
-                          className="cart-image"
-                        />
-                      </Col>
-                      <Col md={3}>
-                        <Link
-                          to={`/product/${item.product}`}
-                          className="cart-product-title"
-                        >
-                          {item.name}
-                        </Link>
-                      </Col>
-                      <div className="cart-status">
+            <ListGroup variant="flush">
+              {cartItems.map((item) => (
+                <ListGroup.Item>
+                  <Row>
+                    <Col md={2}>
+                      <Image
+                        src={item.images[0].url}
+                        fluid
+                        rounder
+                        className="cart-image"
+                      />
+                    </Col>
+                    <Col md={3}>
+                      <Link
+                        to={`/product/${item.product}`}
+                        className="cart-product-title"
+                      >
+                        {item.name}
+                      </Link>
+                    </Col>
+                    <div className="cart-status">
                       <Col md={2}>
                         <span className="cart-price">Price : </span>₹
                         {item.price}
@@ -114,39 +115,37 @@ const CartScreen = ({ match, location, history }) => {
                           <p className="remove">Remove</p>
                         </Button>
                       </Col>
-                      </div>
-                    </Row>
-                    <div className="black-underline"></div>
-                  </ListGroup.Item>
-                  
-                ))}
-              </ListGroup>
+                    </div>
+                  </Row>
+                  <div className="black-underline"></div>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
           )}
-          
         </Col>
         <Col md={4}>
           <Card className="checkout-card">
-          <div className="checkout-title">
-            <p>Price Details</p>
-          </div>
-          <div className="checkout-underline"></div>
+            <div className="checkout-title">
+              <p>Price Details</p>
+            </div>
+            <div className="checkout-underline"></div>
             <ListGroup variant="flush">
-            <div className="gap"></div>
+              <div className="gap"></div>
               <ListGroup.Item>
                 <p className="subtotal">
                   Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}
                   ) items
                 </p>
                 <div className="total-amount">
-                <span className="total">Total amount : </span> ₹{" "}
-                {cartItems
-                  .reduce((acc, item) => acc + item.qty * item.price, 0)
-                  .toFixed(2)}
-                  </div>
+                  <span className="total">Total amount : </span> ₹{" "}
+                  {cartItems
+                    .reduce((acc, item) => acc + item.qty * item.price, 0)
+                    .toFixed(2)}
+                </div>
               </ListGroup.Item>
               <div className="gap"></div>
               <div className="checkout-underline"></div>
-              
+
               <ListGroup.Item>
                 <Button
                   type="button"

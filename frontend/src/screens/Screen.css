@@ -710,6 +710,8 @@ footer p {
 }
 
 .dashBtn {
+  position: relative;
+  top: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -919,12 +921,13 @@ footer p {
   background: #6d8b56;
 }
 .cart-remove{
+  z-index: 9999;
   position: relative;
   top: -60px;
   right: -300px;
   color: #000000;
   width: 124px;
-  height: 29px;
+  height: 40px;
   background: #CB5D4E;
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -954,6 +957,7 @@ footer p {
   right: -100px;
 }
 .cart-status{
+  z-index: 9999;
   position: relative;
   top: -60px;
   right: -330px;
@@ -965,8 +969,8 @@ footer p {
   font-family: poppins; 
   font-size: 24px;
   font-weight: 600;
-  top: -70px;
-  right: -330px;
+  /* top: -70px; */
+  right:80px;
 }
 
 .black-underline{
@@ -979,6 +983,7 @@ footer p {
 }
 
 .cart-background{
+  z-index: 999;
   position: absolute;
   bottom: 0px;
   right: 80px;
@@ -986,7 +991,7 @@ footer p {
 
 .checkout-card{
   /* Rectangle 8 */
-
+z-index: 999;
 position: absolute;
 width: 353px;
 height: 293px;

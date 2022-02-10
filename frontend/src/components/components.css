@@ -39,6 +39,7 @@
 }
 
 .card {
+  background-color: #EEEDED;
   height: 100%;
 }
 
@@ -56,6 +57,9 @@
 }
 
 .card-text {
+  position: relative !important;
+  top: -10px !important;
+  right: -10px !important;
   font-size: 1.4rem;
 }
 
@@ -75,6 +79,9 @@
   }
 }
 .ratings {
+  position: relative;
+  top: -20px;
+  right: 10px;
   font-size: 1.2rem;
   color: #fdcc0d;
 }
@@ -195,6 +202,9 @@
   font-family: poppins;
   font-weight: 700;
   font-size: 28px;
+  position: relative;
+  top: -20px;
+  right: 20px;
 }
 
 .card-body {
@@ -214,19 +224,24 @@
   font-size: 12px;
   color: #6a6363;
 }
-
+.fresh{
+  position: relative;
+  top: -10px;
+}
 .dot {
   position: relative;
   width: 5px;
   height: 5px;
   border-radius: 50%;
   /* left: 358px; */
-  top: 9px;
+  /* top: px; */
   margin-right: 10px;
   background: #6a6363;
 }
 
 .added {
+  position: relative;
+  top: -10px;
   display: flex;
   font-size: 18px;
 }
@@ -251,6 +266,8 @@
 }
 
 .viewDetails-btn {
+  position: relative;
+  top: -20px;
   text-align: center;
 }
 
@@ -261,8 +278,8 @@
 
 .star{
   position: relative;
-  top: 2px;
-  right: 55px;
+  top: 8px;
+  right: 52px;
   color: white;
 }
 .rating{
@@ -273,5 +290,6 @@
 
 .rating-review{
   position: relative;
+  top: 10px;
   right: 15px;
 }

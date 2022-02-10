@@ -19,13 +19,15 @@ import {
 } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
+import "./Screen.css";
+import avator from "../assets/avator.svg";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [recom, setRecom] = useState("");
-  const [rl , srl] = useState(false)
+  const [rl, srl] = useState(false);
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -43,7 +45,7 @@ const ProductScreen = ({ match, history }) => {
   useEffect(() => {
     if (successProductReview) {
       setRating(0);
-    setComment("");
+      setComment("");
     }
     dispatch(listProductDetails(match.params.id));
   }, [dispatch, match, successProductReview]);
@@ -52,26 +54,24 @@ const ProductScreen = ({ match, history }) => {
     history.push(`/cart/${match.params.id}?qty=${qty}`);
   };
   const postRecom = async () => {
-    srl(true)
+    srl(true);
     try {
       const config = {
         headers: {
           "content-type": "application/json",
-          Authorization: `Bearer ${userInfo.token}`
+          Authorization: `Bearer ${userInfo.token}`,
         },
       };
       const { data } = await axios.post(
         "/api/recom",
-        {  "recommendation": recom,
-        "farmer_id": product.user._id
-      },
+        { recommendation: recom, farmer_id: product.user._id },
         config
       );
-      console.log(data.response.msg)
+      console.log(data.response.msg);
     } catch (error) {
-      console.log(error.response.data.message)
+      console.log(error.response.data.message);
     }
-    srl(false)
+    srl(false);
   };
   const reviewSubmitHandler = (e) => {
     e.preventDefault();
@@ -84,7 +84,7 @@ const ProductScreen = ({ match, history }) => {
   };
   return (
     <>
-      <Link to="/home" className="btn btn-light my-3">
+      <Link to="/home" className="btn back-btn btn-light my-3">
         Go Back
       </Link>
       {loading ? (
@@ -99,11 +99,13 @@ const ProductScreen = ({ match, history }) => {
                 {product?.product?.images &&
                   product?.product?.images.map((image) => (
                     <Carousel.Item key={image.public_id}>
-                      <img
-                        className="d-block w-100 product-images"
-                        src={image.url}
-                        alt={product?.product?.title}
-                      />
+                      <div className="Pimage">
+                        <img
+                          className="d-block w-100 product-images"
+                          src={image.url}
+                          alt={product?.product?.title}
+                        />
+                      </div>
                     </Carousel.Item>
                   ))}
               </Carousel>
@@ -173,7 +175,7 @@ const ProductScreen = ({ match, history }) => {
                   <ListGroup.Item>
                     <Button
                       onClick={submitHandler}
-                      className="btn-block"
+                      className="btn-block1"
                       type="button"
                       disabled={product?.product?.countInStock === 0}
                     >
@@ -183,34 +185,60 @@ const ProductScreen = ({ match, history }) => {
                 </ListGroup>
               </Card>
             </Col>
-            <Col>
-              <p>{product?.user?.name}</p>
-              <p>{product?.user?.email}</p>
-              <p>{product?.user?.createdAt}</p>
-              <p>{product?.user?.updatedAt}</p>
-            </Col>
-            <Col>
-              <input type="text" onChange={(e) => setRecom(e.target.value)} />
-              <Button
-                disabled={!product?.user?._id || !userInfo || !recom || rl}
-                onClick={postRecom}
-              >Post Recommendation</Button>
-            </Col>
+            <div className="farmer-details">
+              <img src={avator} alt="" className="avator-details" />
+              <p className="details-title">Farmer Detail's</p>
+              <Col>
+                <p className="detail-name">
+                  <span className="span-details">Name : </span>
+                  {product?.user?.name}
+                </p>
+                <p className="detail-email">
+                  <span className="span-details">Email : </span>
+                  {product?.user?.email}
+                </p>
+                <p className="detail-since">
+                  <span className="span-details">Farmer Since : </span>
+                  {product?.user?.createdAt.split("T")[0]}
+                </p>
+                {/* <p>{product?.user?.updatedAt}</p> */}
+              </Col>
+            </div>
+            <div className="post-recom">
+              <Col>
+                <p className="recom-title">Post Recommendation For Farmer</p>
+                <input type="text" onChange={(e) => setRecom(e.target.value)} />
+                <Button
+                  className="postBtn"
+                  disabled={!product?.user?._id || !userInfo || !recom || rl}
+                  onClick={postRecom}
+                >
+                  Post Recommendation
+                </Button>
+              </Col>
+            </div>
           </Row>
 
           <Row>
+            <div className="review-section"></div>
             <Col md={6}>
-              <h2>Reviews</h2>
+              <h2 className="review-title">Reviews</h2>
               {product?.product?.reviews.length === 0 && (
                 <Message>No Reviews</Message>
               )}
               <ListGroup variant="flush">
                 {product?.product?.reviews.map((review) => (
                   <ListGroup.Item key={review._id}>
-                    <strong>{review.name}</strong>
+                    <div className="review-details">
+                      <strong> By : {review.name}</strong>
+                      
+                      <p className="commt"> {review.comment}</p>
+                      <p>Posted on : {review.createdAt.substring(0, 10)}</p>
+                      
+                    </div>
+                    <div className="stars">
                     <Rating value={review.rating} />
-                    <p>{review.createdAt.substring(0, 10)}</p>
-                    <p>{review.comment}</p>
+                    </div>
                   </ListGroup.Item>
                 ))}
                 <ListGroup.Item>

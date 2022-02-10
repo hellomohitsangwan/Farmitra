@@ -15,3 +15,12 @@ h2 {
 .rating span {
   margin: 0.1rem;
 }
+::-moz-selection { /* Code for Firefox */
+  color: rgb(0, 0, 0);
+  background: #545855;
+}
+
+::selection {
+  color: rgb(0, 0, 0);
+  background: #acabad;
+}

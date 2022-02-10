@@ -26,9 +26,9 @@ const Slider = () => {
     },[index])
   
   return (
-    <section className="section">
+    <section className="slider-section">
       <div className="title"></div>
-      <div className="section-center">
+      <div className="section-centerSlider">
         {slide.map((images, imagesIndex) => {
           const { id, image } = images;
           let position = "nextSlide";
@@ -42,9 +42,9 @@ const Slider = () => {
             position = "lastSlide";
           }
           return (
-            <article className={position} key={id}>
+            <div className={`silde ${position}`} key={id}>
               <img src={image} alt={id} className="food-img" />
-            </article>
+            </div>
           );
         })}
         <button className="prev" onClick={() => setIndex(index - 1)}>

@@ -1,14 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Col, Row } from "react-bootstrap";
 import Product from "../components/Product";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
-import Slider from "../components/Slider";
 //redux files
 import { listProducts } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
+import Slider from "../components/Slider";
+import downArrow from "../assets/downArrow.svg";
 import Footer from "../components/Footer";
+
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+
 const HomeScreen = ({ match }) => {
+  const myRef = useRef(null);
+  const executeScroll = () => scrollToRef(myRef);
   const keyword = match.params.keyword;
 
   const productList = useSelector((state) => state.productList); //choose from whatever in our store
@@ -19,7 +25,7 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyword]);
   return (
     <>
-    <Slider />
+    <Slider/>
       {products?.length !== 0 ? (
         <h1>Latest Products</h1>
       ) : (

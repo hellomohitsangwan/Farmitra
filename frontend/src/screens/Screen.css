@@ -56,7 +56,7 @@ header .logo {
   text-decoration: none;
   display: inline-flex;
 }
-.nav-item{
+.nav-item {
   list-style-type: none;
 }
 a {
@@ -337,12 +337,13 @@ heading {
   font-family: "Baloo Da 2", serif;
   font-size: 2rem;
   line-height: 2.6rem;
-  font-weight: 400;
+  font-weight: bolder;
   margin-bottom: 2rem;
 }
 
 .service-text {
-  font-family: "Josefin Slab", serif;
+  /* font-family: "Josefin Slab", serif; */
+  font-weight: bold;
   font-size: 1rem;
   text-align: justify;
 }
@@ -358,8 +359,8 @@ heading {
   object-fit: cover;
   opacity: 0.8;
 }
-@media screen and (min-width: 1300px){
-  .card-me{
+@media screen and (min-width: 1300px) {
+  .card-me {
     max-width: 290px;
   }
 }
@@ -537,7 +538,7 @@ img {
 
 .card-me {
   border-radius: 1rem;
-  box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 20px 40px -14px rgba(37, 37, 37, 0.13);
   box-shadow: 5px 5px 20px 0px rgba(7, 7, 7, 0.61);
   display: flex;
   flex-direction: column;
@@ -634,9 +635,6 @@ footer p {
     font-size: 0.5rem;
   }
 }
-
-
-
 
 /* ***************DASHBOARD****************** */
 
@@ -875,7 +873,7 @@ footer p {
 .addToCart:hover {
   background: #000000;
 }
-.underline5{
+.underline5 {
   position: relative;
   width: 649.5px;
   height: 1.5px;
@@ -888,14 +886,11 @@ footer p {
   background: #000000;
 }
 
-.dashArrow1{
+.dashArrow1 {
   position: relative;
   right: 30px;
 }
 
-
-
-
 /* CART SCREEN ******************* */
 /* CART SCREEN ******************* */
 /* CART SCREEN ******************* */
@@ -903,14 +898,14 @@ footer p {
 /* CART SCREEN ******************* */
 /* CART SCREEN ******************* */
 
-.cart-title{
+.cart-title {
   position: relative;
   margin-top: 20px;
   right: -100px;
   font-size: 40px;
 }
 
-.green-underline{
+.green-underline {
   position: relative;
   top: 10px;
   right: -250px;
@@ -918,58 +913,57 @@ footer p {
   height: 4px;
   background: #6d8b56;
 }
-.cart-remove{
+.cart-remove {
   position: relative;
   top: -60px;
   right: -300px;
   color: #000000;
   width: 124px;
   height: 29px;
-  background: #CB5D4E;
+  background: #cb5d4e;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
-.cart-remove:hover{
+.cart-remove:hover {
   background: #df5f4e;
 }
-.cart-price{
+.cart-price {
   font-size: 18px;
   font-weight: 600;
 }
 
-
-.remove{
+.remove {
   text-align: center;
   align-items: center;
   font-size: 16px;
   color: white;
 }
 
-.cart-image{
-  position: relative; 
+.cart-image {
+  position: relative;
   top: 20px;
   width: 200px;
   border-radius: 10px;
   top: 50px;
   right: -100px;
 }
-.cart-status{
+.cart-status {
   position: relative;
   top: -60px;
   right: -330px;
 }
 
-.cart-product-title{
+.cart-product-title {
   position: relative;
-  color: #000000; 
-  font-family: poppins; 
+  color: #000000;
+  font-family: poppins;
   font-size: 24px;
   font-weight: 600;
   top: -70px;
   right: -330px;
 }
 
-.black-underline{
+.black-underline {
   position: relative;
   top: 230px;
   right: -100px;
@@ -978,41 +972,40 @@ footer p {
   background: #000000;
 }
 
-.cart-background{
+.cart-background {
   position: absolute;
   bottom: 0px;
   right: 80px;
 }
 
-.checkout-card{
+.checkout-card {
   /* Rectangle 8 */
 
-position: absolute;
-width: 353px;
-height: 293px;
-left: 880px;
-top: 131px;
+  position: absolute;
+  width: 353px;
+  height: 293px;
+  left: 880px;
+  top: 131px;
 
-background: #EDF5E4;
-border-radius: 10px;
-
+  background: #edf5e4;
+  border-radius: 10px;
 }
 
-.checkout-btn{
+.checkout-btn {
   position: relative;
   right: -55px;
   font-size: 18px;
   width: 236px;
   height: 37px;
-  background: #6D8B56;
+  background: #6d8b56;
   border-radius: 10px;
   transition: all 0.3s ease;
 }
-.checkout-btn:hover{
+.checkout-btn:hover {
   background: #6e9451;
 }
 
-.checkout-title{
+.checkout-title {
   font-size: 24px;
   font-weight: 500;
   align-items: center;
@@ -1020,35 +1013,35 @@ border-radius: 10px;
   margin-top: 20px;
 }
 
-.checkout-underline{
+.checkout-underline {
   /* position: absolute; */
   width: 353px;
   height: 1px;
   /* top: 85px; */
-  margin-top: 20px; 
-  margin-bottom: 20px; 
+  margin-top: 20px;
+  margin-bottom: 20px;
 
   background: #000000;
 }
 
-.subtotal{
+.subtotal {
   font-size: 18px;
 }
 
-.total-amount{
+.total-amount {
   font-size: 18px;
 }
 
-.subtotal{
+.subtotal {
   position: relative;
   right: -30px;
 }
-.total-amount{
+.total-amount {
   position: relative;
   right: -30px;
 }
 
-.cart-kg{
+.cart-kg {
   color: #989292;
   font-size: 12px;
 }

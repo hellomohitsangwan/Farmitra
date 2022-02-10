@@ -3,12 +3,22 @@ import "./Screen.css";
 import { Link } from "react-router-dom";
 import farmBG from "../images/5.png";
 import transparentBG from "../images/p_bgTrans.png";
-import windMill from "../images/3.png";
+import windMill from "../images/windMillFinal.png";
 import farmer from "../images/front2.png";
 import plant from "../images/plant.gif";
-// import cattle from "../images/cattleOrange1.png";
 import logo from "../images/DummyLogo_mix.png";
-import model from "../images/model.jpg";
+import mohit from "../images/0.png";
+import vishal from "../images/2.png";
+import preyash from "../images/1.png";
+import akanksha from "../images/4.png";
+
+import SpaIcon from "@mui/icons-material/Spa";
+import MoneyOffIcon from "@mui/icons-material/MoneyOff";
+import HealingIcon from "@mui/icons-material/Healing";
+import LocalDiningIcon from "@mui/icons-material/LocalDining";
+import DeleteIcon from "@mui/icons-material/Delete";
+import BarChartIcon from "@mui/icons-material/BarChart";
+
 import { useEffect } from "react";
 
 const LandingScreen = () => {
@@ -46,7 +56,6 @@ const LandingScreen = () => {
             <img src={logo} />
           </a>
         </logo>
-        {/* <!-- <logo><a href="#" className="logo">Logo</a></logo> --> */}
         <button
           className="navbar-toggler"
           type="button"
@@ -71,10 +80,10 @@ const LandingScreen = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <a href="#">About</a>
+            <a href="#about">About</a>
           </li>
           <li className="nav-item">
-            <a href="#">Contact</a>
+            <a href="#contact">Contact</a>
           </li>
         </div>
       </header>
@@ -83,68 +92,63 @@ const LandingScreen = () => {
         <img src={farmBG} id="stars" />
         <img src={transparentBG} id="moon" />
         <img src={windMill} id="mountains_behind" />
-        <h2 id="text">FARM HUB</h2>
+        <h2 id="text">FARMITRA</h2>
         <a href="#sec" id="btn">
           Explore
         </a>
         <img src={farmer} id="mountains_front" />
       </parallax>
       {/* <!--------------------------------------------------- section---------------------------------------------------------- --> */}
-      <section>
+      <section id="about">
         <div className="sec secUp " id="sec">
-          <heading>FARM HUB</heading>
+          <heading>FARMITRA</heading>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
-            aliquid inventore consequatur doloribus cupiditate enim suscipit
-            quam, praesentium totam nesciunt aliquam obcaecati assumenda
-            perferendis corrupti in saepe molestias harum optio, soluta facere
-            aperiam nam dicta quia ipsum! Necessitatibus cum iusto adipisci
-            veritatis placeat temporibus ipsam libero, sint a asperiores neque
-            quas saepe alias esse magnam molestiae! Voluptatem, deleniti quia!
-            Optio repellat fuga nobis voluptatibus modi blanditiis. Doloribus
-            asperiores optio quidem sequi vero provident labore recusandae
-            ducimus exercitationem aliquam ullam quos corporis consequuntur
-            veritatis, sit praesentium? Odio, cupiditate nihil magni dolorem
-            facere tempore, sunt obcaecati dolorum quam quo dolores eos
-            repudiandae cum necessitatibus? Enim ex eveniet eaque magnam facere
-            quos dolores accusamus animi voluptate itaque porro veritatis
-            quaerat quibusdam distinctio doloribus, maxime molestias recusandae.
-            Illo magni fuga, reprehenderit sequi commodi, molestiae suscipit, ex
-            ut quam quos dolorum eveniet magnam eligendi cum animi dicta iure
-            atque? Voluptatum autem repellat obcaecati pariatur accusantium qui,
-            laboriosam consequuntur itaque beatae explicabo reiciendis sequi
-            repellendus! Sunt in, porro aliquam ipsum molestias dolore unde. Est
-            iusto esse error ea eum recusandae unde enim, quibusdam ipsa laborum
-            odit illum vel atque nihil iste ipsam numquam blanditiis doloribus?
-            Nam explicabo quod aperiam iste voluptatem adipisci, perspiciatis
-            excepturi corrupti eum!
+            Farmitra is a combination of the English words "farm" and "mitra" in
+            Hindi. We operate as a farmer's buddy, as the name implies. Farmers
+            play an important role in both providing the essentials for all of
+            our food needs and transforming the agricultural environment.
+            Farmers ensure the long-term viability of the entire flora and fauna
+            by controlling farming techniques. Agriculture now covers one-third
+            of the planet's land area. It is the most important activity for a
+            large portion of the world's population, as it provides food for
+            people all over the world. They safeguard the farm produce from the
+            moment it is planted until it reaches the market. Because of their
+            efforts, the majority of us have food on our tables every day. It's
+            disheartening to see their hard work and harvests go to waste
+            because they don't obtain enough customer in a timely manner.
+            Farmers devote a lot of work, time and money in cultivating these
+            products, and it becomes particularly tough for them when they don't
+            get adequate returns as sometimes there is no suitable market.
+            They're even driven into circumstances where they're forced to
+            commit suicide. We constantly come across these type of news. Union
+            Minister of Agriculture and Farmers Welfare Narendra Singh Tomar
+            told the Lok Sabha on November 30, 2021, that 5,579 Indian farmers
+            committed suicide in 2020. Suicides committed as a result of rotting
+            crops owing to a lack of sales accounted for a significant portion
+            of this total.
           </p>
           <br />
+          <p>
+            <strong>
+              The main motto behind our portal is "Hardwork should be paid off".
+            </strong>
+          </p>
+
           <br />
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Debitis
-            dolorem, nam corrupti rerum necessitatibus quisquam praesentium
-            facilis vel illum deleniti alias? Qui exercitationem perspiciatis
-            similique tenetur iure beatae aperiam modi eveniet! Perspiciatis
-            incidunt delectus exercitationem illo iste modi ipsam culpa, minima
-            reprehenderit maxime non tempora quaerat libero provident voluptates
-            deserunt! Quibusdam, nihil placeat. Sint ex expedita, libero dolorum
-            quia quam assumenda non, maxime, ipsum perferendis repellat magnam
-            eum iste nihil consequuntur vero quaerat fuga. Provident tempora,
-            sint quas suscipit deserunt accusamus illo laboriosam facere rerum
-            iusto, facilis, adipisci harum quod. Commodi vel autem voluptate
-            amet corrupti nostrum ipsam mollitia molestiae tempora totam,
-            necessitatibus quaerat culpa rem in iusto unde eos perspiciatis
-            libero veniam quos nemo dolorum beatae ratione! Quod ab eos
-            veritatis consectetur eaque soluta molestias? Autem magnam mollitia
-            perferendis quod eius ut libero modi! Saepe, repellendus? Non,
-            tempora impedit eligendi ipsum modi explicabo quasi cum numquam
-            odit! Quod repellat doloribus eveniet fuga qui iste nobis in
-            doloremque quos numquam distinctio atque accusantium, maxime nemo a
-            eius. Quia nulla adipisci veritatis, voluptatibus atque nostrum
-            ullam labore sapiente ratione est tenetur reiciendis, doloribus cum
-            cumque sint aliquid ad veniam fuga quasi quas provident! Eos
-            repellendus incidunt eius? Sunt aspernatur debitis vero!
+            Farmitra is the answer to this conundrum. We offer a platform for
+            farmers to connect with other organisations and sell their crops to
+            them. We are primarily interested in connecting farmers with
+            non-governmental organisations (NGOs) because NGOs can play an
+            important role in purchasing unsold crops from these farmers and
+            distributing them to the less fortunate. This model is similar to
+            the one in which NGOs collect leftover food from restaurants and
+            distribute it to the less fortunate. We are addressing the problem
+            of farmers while also delivering food to those in need in this way.
+            It's like if there's a scarcity of some materials in one location,
+            and those resources are so plentiful in another that they're
+            rotting; we operate as a channel and attempt to keep things in
+            balance.
           </p>
           <br />
         </div>
@@ -184,79 +188,70 @@ const LandingScreen = () => {
             <div className="about-us">
               <div className="section-header">
                 <h1 className="section-heading problems-heading">Problems</h1>
-                {/* <div className="underline"></div> */}
               </div>
               <div className="services">
                 <div className="service">
                   <div className="service-header">
-                    <i className="fas fa-tractor"></i>
-                    <h3>Interior</h3>
+                    <SpaIcon sx={{ fontSize: 100 }} />
+                    <h3>Rotting Crop</h3>
                   </div>
                   <p className="service-text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Doloremque, officia! Necessitatibus delectus sed dicta
-                    corrupti voluptatibus, omnis eius vel ab magni nemo,
-                    incidunt esse! Quod!
+                    India wastes up to 16% of its agricultural produce
                   </p>
                 </div>
                 <div className="service">
                   <div className="service-header">
-                    <i className="fas fa-hammer"></i>
-                    <h3>Exterior</h3>
+                    <LocalDiningIcon sx={{ fontSize: 100 }} />
+                    <h3>Hunger</h3>
                   </div>
                   <p className="service-text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Doloremque, officia! Necessitatibus delectus sed dicta
-                    corrupti voluptatibus, omnis eius vel ab magni nemo,
-                    incidunt esse! Quod!
+                    According to FAO estimates in ‘The State of Food Security
+                    and Nutrition in the World, 2020 report, 189.2 million
+                    people are undernourished in India.
                   </p>
                 </div>
                 <div className="service">
                   <div className="service-header">
-                    <i className="fas fa-pencil-alt"></i>
-                    <h3>Design</h3>
+                    <DeleteIcon sx={{ fontSize: 100 }} />
+                    <h3>Resource wastage</h3>
                   </div>
                   <p className="service-text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Doloremque, officia! Necessitatibus delectus sed dicta
-                    corrupti voluptatibus, omnis eius vel ab magni nemo,
-                    incidunt esse! Quod!
+                    If the crop rots owing to a lack of sale, a lot of resources
+                    such as manures, seeds, water, power, and so on are
+                    squandered.
                   </p>
                 </div>
                 <div className="service">
                   <div className="service-header">
-                    <i className="fas fa-sun"></i>
-                    <h3>Decoration</h3>
+                    <MoneyOffIcon sx={{ fontSize: 100 }} />
+                    <h3>Scarcity of capital</h3>
                   </div>
                   <p className="service-text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Doloremque, officia! Necessitatibus delectus sed dicta
-                    corrupti voluptatibus, omnis eius vel ab magni nemo,
-                    incidunt esse! Quod!
+                    As per the agriculture census of 2015-16, the majority of
+                    land holdings in India — 86 percent — are small and
+                    marginal.
                   </p>
                 </div>
                 <div className="service">
                   <div className="service-header">
-                    <i className="fas fa-temperature-low"></i>
-                    <h3>Planning</h3>
+                    <HealingIcon sx={{ fontSize: 100 }} />
+                    <h3>Farmer Suicides</h3>
                   </div>
                   <p className="service-text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Doloremque, officia! Necessitatibus delectus sed dicta
-                    corrupti voluptatibus, omnis eius vel ab magni nemo,
-                    incidunt esse! Quod!
+                    In 2018, 7.7% of all national suicides were classified as
+                    farmer suicides.
                   </p>
                 </div>
                 <div className="service">
                   <div className="service-header">
-                    <i className="fas fa-crow"></i>
-                    <h3>Execution</h3>
+                    <BarChartIcon sx={{ fontSize: 100 }} />
+                    <h3>High Interest Rates</h3>
                   </div>
                   <p className="service-text">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Doloremque, officia! Necessitatibus delectus sed dicta
-                    corrupti voluptatibus, omnis eius vel ab magni nemo,
-                    incidunt esse! Quod!
+                    Thousands of farmers take their lives each year due to debt
+                    burden. Unreasonably-high interest rates should be declared
+                    illegal, and the government must take quick, strict, and
+                    appropriate action against greedy money lenders.
                   </p>
                 </div>
                 <div className="about-us-img-wrapper">
@@ -296,25 +291,30 @@ const LandingScreen = () => {
               d="M0,132L34.3,132C68.6,132,137,132,206,113.7C274.3,95,343,59,411,51.3C480,44,549,66,617,73.3C685.7,81,754,73,823,62.3C891.4,51,960,37,1029,33C1097.1,29,1166,37,1234,55C1302.9,73,1371,103,1440,124.7C1508.6,147,1577,161,1646,150.3C1714.3,139,1783,103,1851,80.7C1920,59,1989,51,2057,47.7C2125.7,44,2194,44,2263,36.7C2331.4,29,2400,15,2469,7.3C2537.1,0,2606,0,2674,7.3C2742.9,15,2811,29,2880,51.3C2948.6,73,3017,103,3086,110C3154.3,117,3223,103,3291,99C3360,95,3429,103,3497,113.7C3565.7,125,3634,139,3703,146.7C3771.4,154,3840,154,3909,157.7C3977.1,161,4046,169,4114,161.3C4182.9,154,4251,132,4320,102.7C4388.6,73,4457,37,4526,33C4594.3,29,4663,59,4731,88C4800,117,4869,147,4903,161.3L4937.1,176L4937.1,220L4902.9,220C4868.6,220,4800,220,4731,220C4662.9,220,4594,220,4526,220C4457.1,220,4389,220,4320,220C4251.4,220,4183,220,4114,220C4045.7,220,3977,220,3909,220C3840,220,3771,220,3703,220C3634.3,220,3566,220,3497,220C3428.6,220,3360,220,3291,220C3222.9,220,3154,220,3086,220C3017.1,220,2949,220,2880,220C2811.4,220,2743,220,2674,220C2605.7,220,2537,220,2469,220C2400,220,2331,220,2263,220C2194.3,220,2126,220,2057,220C1988.6,220,1920,220,1851,220C1782.9,220,1714,220,1646,220C1577.1,220,1509,220,1440,220C1371.4,220,1303,220,1234,220C1165.7,220,1097,220,1029,220C960,220,891,220,823,220C754.3,220,686,220,617,220C548.6,220,480,220,411,220C342.9,220,274,220,206,220C137.1,220,69,220,34,220L0,220Z"
             ></path>
           </svg>
-          <div className="bg">
+          <div className="bg" id="contact">
             <div className="main showcase" />
             <div className="section-header">
-              <h1 className="section-heading about-heading">About Us</h1>
-              {/* <div className="underline"></div> */}
+              <h1 className="section-heading about-heading">Our Team</h1>
             </div>
             <ul className="cards container">
               <li className="cards_item">
                 <div className="card-me">
                   <div className="card_image">
-                    <img src={model} />
+                    <img src={mohit} />
                   </div>
                   <div className="card_content box2">
-                    <h2 className="card_title">Lorem, ipsum dolor.</h2>
+                    <h2 className="card_title">Mohit Kumar</h2>
                     <p className="card_text"></p>
                     <div className="links">
-                      <i class="fab fa-linkedin-in fa-2x"></i>
-                      <i class="fab fa-github fa-2x"></i>
-                      <i class="fas fa-envelope-open fa-2x"></i>
+                      <a href="https://www.linkedin.com/in/mohit-sangwan16/">
+                        <i class="fab fa-linkedin-in fa-x"></i>
+                      </a>
+                      <a href="https://github.com/hellomohitsangwan">
+                        <i class="fab fa-github fa-x"></i>
+                      </a>
+                      <a href="mailto:hellomohitsangwan@gmail.com">
+                        <i class="fas fa-envelope-open fa-x"></i>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -322,15 +322,21 @@ const LandingScreen = () => {
               <li className="cards_item">
                 <div className="card-me">
                   <div className="card_image">
-                    <img src={model} />
+                    <img src={vishal} />
                   </div>
                   <div className="card_content box2">
-                    <h2 className="card_title">Lorem, ipsum dolor.</h2>
+                    <h2 className="card_title">Vishal Singh</h2>
                     <p className="card_text"></p>
                     <div className="links">
-                      <i class="fab fa-linkedin-in fa-2x"></i>
-                      <i class="fab fa-github fa-2x"></i>
-                      <i class="fas fa-envelope-open fa-2x"></i>
+                      <a href="https://www.linkedin.com/in/vishal-singh-2046841b7/">
+                        <i class="fab fa-linkedin-in fa-x"></i>
+                      </a>
+                      <a href="https://github.com/vishalsinghhh">
+                        <i class="fab fa-github fa-x"></i>
+                      </a>
+                      <a href="mailto:vishalsingh0710vs@gmail.com">
+                        <i class="fas fa-envelope-open fa-x"></i>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -339,15 +345,21 @@ const LandingScreen = () => {
               <li className="cards_item">
                 <div className="card-me">
                   <div className="card_image">
-                    <img src={model} />
+                    <img src={preyash} />
                   </div>
                   <div className="card_content box2">
-                    <h2 className="card_title">Lorem, ipsum dolor.</h2>
+                    <h2 className="card_title">Preyash</h2>
                     <p className="card_text"></p>
                     <div className="links">
-                      <i class="fab fa-linkedin-in fa-2x"></i>
-                      <i class="fab fa-github fa-2x"></i>
-                      <i class="fas fa-envelope-open fa-2x"></i>
+                      <a href="https://www.linkedin.com/in/preyash-yadav-827a421b6/">
+                        <i class="fab fa-linkedin-in fa-x"></i>
+                      </a>
+                      <a href="https://github.com/Preyash-tryin-to-code">
+                        <i class="fab fa-github fa-x"></i>
+                      </a>
+                      <a href="mailto:preyashyadav29@gmail.com">
+                        <i class="fas fa-envelope-open fa-x"></i>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -355,15 +367,21 @@ const LandingScreen = () => {
               <li className="cards_item">
                 <div className="card-me">
                   <div className="card_image">
-                    <img src={model} />
+                    <img src={akanksha} />
                   </div>
                   <div className="card_content box2">
-                    <h2 className="card_title">Lorem, ipsum dolor.</h2>
+                    <h2 className="card_title">Akanksha Singh</h2>
                     <p className="card_text"></p>
                     <div className="links">
-                      <i class="fab fa-linkedin-in fa-2x"></i>
-                      <i class="fab fa-github fa-2x"></i>
-                      <i class="fas fa-envelope-open fa-2x"></i>
+                      <a href="https://www.linkedin.com/in/akanksha-singh2002/">
+                        <i class="fab fa-linkedin-in fa-x"></i>
+                      </a>
+                      <a href="https://github.com/singhakanksha03">
+                        <i class="fab fa-github fa-x"></i>
+                      </a>
+                      <a href="mailto:akanksha.namrata092@gmail.com">
+                        <i class="fas fa-envelope-open fa-x"></i>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -374,24 +392,7 @@ const LandingScreen = () => {
       </section>
       <footer>
         <div className="links container">
-          <ul className="social-media-links">
-            <li>
-              <a href="#">
-                <i className="fab fa-discord fa-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fab fa-github fa-2x"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i className="fas fa-at fa-2x"></i>
-              </a>
-            </li>
-          </ul>
-          <p>FarmHUB &copy;, 2021 All rights reserved.</p>
+          <p>Farmitra &copy;, 2022 All rights reserved.</p>
         </div>
       </footer>
     </>

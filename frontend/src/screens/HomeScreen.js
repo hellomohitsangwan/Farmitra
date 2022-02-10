@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Col, Row } from "react-bootstrap";
 import Product from "../components/Product";
 import Message from "../components/Message";
@@ -6,8 +6,15 @@ import Loader from "../components/Loader";
 //redux files
 import { listProducts } from "../actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
+import Slider from "../components/Slider";
+import downArrow from "../assets/downArrow.svg";
 import Footer from "../components/Footer";
+
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop);
+
 const HomeScreen = ({ match }) => {
+  const myRef = useRef(null);
+  const executeScroll = () => scrollToRef(myRef);
   const keyword = match.params.keyword;
 
   const productList = useSelector((state) => state.productList); //choose from whatever in our store
@@ -18,8 +25,20 @@ const HomeScreen = ({ match }) => {
   }, [dispatch, keyword]);
   return (
     <>
+      <Slider />
+      <div className="allProducts-title">
+        <p>All Products</p>
+        <button className="btn" onClick={executeScroll}>
+          <img src={downArrow} alt="" className="arrow" />
+        </button>
+        <div className="ref" ref={myRef}></div>
+        <div className="gap1"></div>
+      </div>
       {products?.length !== 0 ? (
-        <h1>Latest Products</h1>
+        <div className="latest">
+          <p className="latest-product">Latest Products</p>
+          <div className="underline1"></div>
+        </div>
       ) : (
         !loading && (
           <>

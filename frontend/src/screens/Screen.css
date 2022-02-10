@@ -708,6 +708,8 @@ footer p {
 }
 
 .dashBtn {
+  position: relative;
+  top: 20px;
   background: none;
   border: none;
   cursor: pointer;
@@ -914,12 +916,13 @@ footer p {
   background: #6d8b56;
 }
 .cart-remove {
+  z-index: 9999;
   position: relative;
   top: -60px;
   right: -300px;
   color: #000000;
   width: 124px;
-  height: 29px;
+  height: 40px;
   background: #cb5d4e;
   border-radius: 10px;
   transition: all 0.3s ease;
@@ -948,6 +951,7 @@ footer p {
   right: -100px;
 }
 .cart-status {
+  z-index: 9999;
   position: relative;
   top: -60px;
   right: -330px;
@@ -959,8 +963,8 @@ footer p {
   font-family: poppins;
   font-size: 24px;
   font-weight: 600;
-  top: -70px;
-  right: -330px;
+  /* top: -70px; */
+  right: 80px;
 }
 
 .black-underline {
@@ -973,6 +977,7 @@ footer p {
 }
 
 .cart-background {
+  z-index: 999;
   position: absolute;
   bottom: 0px;
   right: 80px;
@@ -980,7 +985,7 @@ footer p {
 
 .checkout-card {
   /* Rectangle 8 */
-
+  z-index: 999;
   position: absolute;
   width: 353px;
   height: 293px;
@@ -1044,4 +1049,106 @@ footer p {
 .cart-kg {
   color: #989292;
   font-size: 12px;
+}
+
+.back-btn {
+  position: relative;
+  right: -100px;
+  background-color: #5da56d;
+}
+.back-btn:hover {
+  background-color: #7aca8c;
+}
+
+.product-images {
+  width: 100px;
+}
+
+.Pimage img {
+  width: 600px !important;
+}
+
+.btn-block1 {
+  border: none;
+  background-color: #5da56d;
+}
+.btn-block1:hover {
+  background-color: #45be62;
+}
+/* .recom{
+  background-color: #5da56d;
+} */
+
+.farmer-details {
+  margin-top: 20px;
+  width: 628px;
+  height: 120px;
+  border-radius: 20px;
+  color: white;
+  background-color: #989292;
+  margin-left: 110px;
+}
+.details-title {
+  position: relative;
+  right: -230px;
+  top: -40px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+.span-details {
+  font-weight: bold;
+}
+
+.detail-name {
+  position: relative;
+  top: -65px;
+  right: -100px;
+}
+.detail-email {
+  position: relative;
+  top: -80px;
+  right: -100px;
+}
+.detail-since {
+  position: relative;
+  top: -95px;
+  right: -100px;
+}
+
+.avator-details {
+  position: relative;
+  top: 40px;
+}
+
+.post-recom {
+  position: relative;
+  top: -100px;
+  right: -800px;
+}
+.recom-title {
+  font-size: 24px;
+  font-weight: 700;
+}
+.postBtn {
+  border: none;
+  background-color: #6d8b56;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.review-details {
+  display: flex;
+}
+.stars {
+  position: relative;
+  top: -20px;
+}
+.commt {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.review-title {
+  position: relative;
+  right: -20px;
+  font-weight: 600;
 }

@@ -23,7 +23,9 @@ import ProductListScreen from "./screens/ProductListScreen";
 import MainFooter from "./components/MainFooter";
 import NewProductScreen from "./screens/NewProductScreen";
 import LandingScreen from "./screens/LandingScreen";
+import RecomScreen from "./screens/RecomScreen";
 import DashboardScreen from "./screens/DashboardScreen";
+import TopProductsScreen from "./screens/TopProductsScreen";
 const App = () => {
   return (
     <Router>
@@ -31,6 +33,8 @@ const App = () => {
         {/* <Container> */}
         <Route path="/" component={LandingScreen} exact />
         <Header />
+        <Route path="/topProducts" component={TopProductsScreen}/>
+        <Route path="/recommendations" component={RecomScreen}/>
         <Route path="/product/:id" component={ProductScreen} />
         <Route path="/dashboard" component={DashboardScreen}/>
         <Route path="/test" component={Test} />

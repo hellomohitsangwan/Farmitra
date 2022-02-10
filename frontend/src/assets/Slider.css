@@ -61,7 +61,7 @@ a {
 /*  global classes */
 
 /* section */
-.section {
+.slider-section {
   width: 90vw;
   margin: 1rem auto;
   max-width: var(--max-width);
@@ -72,7 +72,7 @@ a {
   Slider
   ===============
   */
-.section-center {
+.section-centerSlider {
   margin: 0 auto;
   margin-top: 0rem;
   width: 80vw;
@@ -112,7 +112,7 @@ a {
   left: 58rem;
   position: relative;
 }
-article {
+.silde {
   position: absolute;
   top: 0;
   left: 0;
@@ -121,14 +121,14 @@ article {
   opacity: 0;
   transition: var(--transition);
 }
-article.activeSlide {
+.silde.activeSlide {
   opacity: 1;
   transform: translateX(0);
 }
-article.lastSlide {
+.silde.lastSlide {
   transform: translateX(-100%);
 }
-article.nextSlide {
+.silde.nextSlide {
   transform: translateX(100%);
 }
 
@@ -152,9 +152,9 @@ article.nextSlide {
   transform: translateY(-10px);
 }
 }
-
+/* 
 .btn{
   border: none;
   background: transparent;
   cursor: pointer;
-}
+} */

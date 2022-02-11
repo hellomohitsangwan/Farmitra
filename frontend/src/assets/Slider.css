@@ -109,8 +109,13 @@ a {
   position: relative;
 }
 .next {
-  left: 58rem;
+  left: 62rem;
   position: relative;
+  top: 260px;
+}
+.prev{
+  position: relative;
+  top: 260px;
 }
 .silde {
   position: absolute;

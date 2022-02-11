@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../actions/userActions";
-import logo from "../assets/KRETRA.svg"
+import logo from "../images/logo1.svg"
 import cart from "../assets/cart.svg"
 import "../assets/navbar.css"
 import dropdown from "../assets/dropdown.svg"

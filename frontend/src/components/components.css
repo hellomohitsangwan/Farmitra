@@ -13,6 +13,9 @@
   background-color: #febd69;
   /* margin-top: 4000px !important; */
 }
+.main-footer{
+  background-color: #6d8b56 ;
+}
 .img-responsive {
   width: 40px;
   height: 40px;
@@ -185,7 +188,7 @@
   width: 378px;
   height: 580px;
   margin: 20px;
-  background: #eeeded;
+  /* background: #eeeded; */
   border-radius: 10px;
 }
 

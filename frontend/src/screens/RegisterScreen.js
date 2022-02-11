@@ -6,8 +6,10 @@ import Message from "../components/Message";
 import Loader from "../components/Loader";
 import { register } from "../actions/userActions";
 import FormContainer from "../components/FormContainer";
+import "./Screen.css";
 
 const RegisterScreen = ({ location, history }) => {
+  const [isAdmin, setIsAdmin] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -30,7 +32,7 @@ const RegisterScreen = ({ location, history }) => {
     if (password !== confirmPassword) {
       setMessage("password do not match");
     } else {
-      dispatch(register(name, email, password));
+      dispatch(register(name, email, password,isAdmin));
     }
     //dispatch login
   };
@@ -77,8 +79,17 @@ const RegisterScreen = ({ location, history }) => {
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
           ></Form.Control>
+          
         </Form.Group>
-        <Button type="submit" variant="primary">
+        <Form.Group controlId="isadmin">
+              <Form.Check
+                type="checkbox"
+                label="Register as a farmer"
+                checked={isAdmin}
+                onChange={(e) => setIsAdmin(e.target.checked)}
+              ></Form.Check>
+            </Form.Group>
+        <Button className="signUp" type="submit" variant="primary">
           Sign Up
         </Button>
       </Form>

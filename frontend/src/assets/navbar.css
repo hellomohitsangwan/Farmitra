@@ -87,8 +87,8 @@ a:hover{
   position: absolute;
   background: white;
   margin-top: 10px;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   display: flex;
   justify-content: space-around;
   align-items: center;

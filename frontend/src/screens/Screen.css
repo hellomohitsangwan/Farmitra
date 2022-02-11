@@ -1152,3 +1152,14 @@ footer p {
   right: -20px;
   font-weight: 600;
 }
+
+
+.signUp{
+  margin-top: 20px;
+  border: none;
+  background-color: #6d8b56;
+}
+
+.signUp:hover{
+  background-color: #6e9451;
+}

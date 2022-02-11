@@ -6,7 +6,7 @@ import transparentBG from "../images/p_bgTrans.png";
 import windMill from "../images/windMillFinal.png";
 import farmer from "../images/front2.png";
 import plant from "../images/plant.gif";
-import logo from "../images/DummyLogo_mix.png";
+// import logo from "../images/logo1.svg";
 import mohit from "../images/0.png";
 import vishal from "../images/2.png";
 import preyash from "../images/1.png";
@@ -53,7 +53,7 @@ const LandingScreen = () => {
       <header className="navbar navbar-expand-lg navbar-dark bg-transparent navbar-custom">
         <logo className="#">
           <a href="#">
-            <img src={logo} />
+            {/* <img src={logo} width={"250px"}/> */}
           </a>
         </logo>
         <button

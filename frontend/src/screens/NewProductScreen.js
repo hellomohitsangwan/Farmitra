@@ -102,16 +102,16 @@ const NewProductScreen = ({ history }) => {
         ) : (
           <Form onSubmit={submitHandler}>
             <Form.Group controlId="name">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Product</Form.Label>
               <Form.Control
                 type="name"
-                placeholder="Enter name"
+                placeholder="Enter product"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="price">
-              <Form.Label>Price</Form.Label>
+              <Form.Label>Price Per Kg</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Enter price"
@@ -148,16 +148,16 @@ const NewProductScreen = ({ history }) => {
               ))}
             </div>{" "}
             <Form.Group controlId="brand">
-              <Form.Label>Brand</Form.Label>
+              <Form.Label>Farmer's Name</Form.Label>
               <Form.Control
                 type="text"
-                placeholder="Enter brand"
+                placeholder="Enter farmer's name"
                 value={brand}
                 onChange={(e) => setBrand(e.target.value)}
               ></Form.Control>
             </Form.Group>
             <Form.Group controlId="countInStock">
-              <Form.Label>Count In Stock</Form.Label>
+              <Form.Label>Count In Stock (kgs)</Form.Label>
               <Form.Control
                 type="number"
                 placeholder="Enter countInStock"
@@ -184,7 +184,7 @@ const NewProductScreen = ({ history }) => {
               ></Form.Control>
             </Form.Group>
             <Button type="submit" variant="primary">
-              Update
+              Add Item
             </Button>
           </Form>
         )}

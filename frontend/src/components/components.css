@@ -21,6 +21,11 @@
   height: 40px;
 }
 
+
+.cardImg{
+  min-height: 200px;
+}
+
 /* search box */
 .input-group {
   width: 90%;

@@ -81,6 +81,7 @@ const RegisterScreen = ({ location, history }) => {
           ></Form.Control>
           
         </Form.Group>
+        <div className="form-gap"></div>
         <Form.Group controlId="isadmin">
               <Form.Check
                 type="checkbox"
@@ -97,7 +98,9 @@ const RegisterScreen = ({ location, history }) => {
         <Col>
           Have an account?
           <Link to={redirect ? `/login?redirect=${redirect}` : "/login"}>
-            Register
+          <span className="login">
+            Log in
+            </span>
           </Link>
         </Col>
       </Row>

@@ -734,16 +734,24 @@ footer p {
 }
 .dashBtn {
   position: relative;
-  top: -80px;
-  right: -150px;
+  top: -10px;
+  right: -10px;
 }
 .dashBtn2 {
   background: none;
   border: none;
   cursor: pointer;
   position: relative;
-  top: -80px;
-  right: -120px;
+  top: -10px;
+  /* right: -120px; */
+}
+.dashBtn3 {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  top: -10px;
+  right: -30px;
 }
 .background {
   position: absolute;
@@ -910,7 +918,7 @@ footer p {
 .green-underline {
   position: relative;
   top: 10px;
-  right: -250px;
+  right: -350px;
   width: 120px;
   height: 4px;
   background: #6d8b56;
@@ -1129,11 +1137,17 @@ footer p {
   font-size: 24px;
   font-weight: 700;
 }
+.postBtn:disabled{
+  background-color: #6d8b56;
+}
 .postBtn {
   border: none;
   background-color: #6d8b56;
   font-size: 14px;
   margin-left: 10px;
+}
+.postBtn:hover {
+ background-color: #6e9451;
 }
 
 .review-details {
@@ -1162,4 +1176,58 @@ footer p {
 
 .signUp:hover{
   background-color: #6e9451;
+}
+
+.form-gap{
+  margin-top: 20px;
+}
+
+.login{
+  color: #6d8b56;
+}
+
+.signBtn{
+  border: none;
+  background-color: #6d8b56;
+}
+.signBtn:hover{
+  border: none;
+  background-color: #6e9451;
+}
+
+.card-text{
+  position: relative;
+  right: -50px;
+}
+
+.recommedation{
+  position: relative;
+  right: 0px;
+  top: 0px;
+}
+
+.review-section{
+  position: relative;
+  right: -100px;
+}
+
+.my-2{
+  border: none;
+  background-color: #6d8b56;
+}
+.my-2:hover{
+  background-color: #6e9451;
+}
+
+.cont{
+  border: none;
+  background-color: #6d8b56;
+}
+.cont:disabled{
+  border: none;
+  background-color: #6d8b56;
+}
+.cont:hover{
+  border: none;
+  background-color: #6d8b56;
 }

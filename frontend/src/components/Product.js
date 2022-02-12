@@ -26,7 +26,7 @@ const Product = ({ product }) => {
           <div className="ratings mt-auto">
           <div className="rating">
             <img src={star} alt="" />
-            <p className="star">{product.rating}.0</p>
+            <p className="star">{Math.floor(product.rating)}.0</p>
             <p className="rating-review"> {product.numReviews} Rating and Reviews</p>
           </div>
             {/* <Rating

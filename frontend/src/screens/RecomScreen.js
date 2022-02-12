@@ -6,6 +6,7 @@ import Loader from "../components/Loader";
 import FarmerMyRecom from "../utils/FarmerMyRecom";
 import hero from "../assets/recomHero.svg";
 import SingleRecom from '../components/Recommendations'
+import "./Screen.css"
 
 const RecomScreen = () => {
   const [myRecom, setMyRecom] = useState([]);
@@ -45,7 +46,7 @@ const RecomScreen = () => {
       <div className="recommedation">
         <p>Recommendations</p>
       </div>
-      {/* <div className="underline"></div> */}
+      <div className="green-underline"></div>
       <div className="recom-image">
         <img src={hero} alt="" width={"800px"} />
       </div>

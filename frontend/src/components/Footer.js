@@ -6,10 +6,10 @@ import ButtonMailto from "./ButtonMailto";
 const Footer = () => {
   return (
     <footer className="main-footer">
-        <div className="links container">
-          <p>Farmitra &copy;, 2022 All rights reserved.</p>
-        </div>
-      </footer>
+      <div className="links container">
+        <p>Farmitra &copy;, 2022 All rights reserved.</p>
+      </div>
+    </footer>
   );
 };
 

@@ -55,8 +55,9 @@ const App = () => {
         <Route path="/search/:keyword" component={HomeScreen} />
         <Route path="/home" component={HomeScreen} exact />
         {/* </Container> */}
+        <MainFooter />
       </main>
-      <MainFooter />
+      {/* <MainFooter /> */}
       <Route path="/LandingScreen" component={LandingScreen} exact />
     </Router>
   );

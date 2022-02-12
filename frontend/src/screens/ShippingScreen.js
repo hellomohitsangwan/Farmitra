@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
 import { saveShippingAddress } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
+import "./Screen.css"
+import Footer from "../components/Footer"
 const ShippingScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart);
   const { shippingAddress } = cart;
@@ -32,6 +34,7 @@ const ShippingScreen = ({ history }) => {
     }
   }, [history, userInfo]);
   return (
+    <>
     <FormContainer>
       <CheckoutSteps step1 />
       <h1>Shipping</h1>
@@ -91,6 +94,11 @@ const ShippingScreen = ({ history }) => {
         </Button>
       </Form>
     </FormContainer>
+    <div className="gap"></div>
+    <div className="gap"></div>
+    <div className="gap"></div>
+    <Footer/>
+    </>
   );
 };
 

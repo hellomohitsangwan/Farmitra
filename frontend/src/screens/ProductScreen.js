@@ -21,6 +21,7 @@ import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import "./Screen.css";
 import avator from "../assets/avator.svg";
+import Footer from "../components/Footer";
 
 const ProductScreen = ({ match, history }) => {
   const [qty, setQty] = useState(1);
@@ -220,7 +221,7 @@ const ProductScreen = ({ match, history }) => {
           </Row>
 
           <Row>
-            <div className="review-section"></div>
+            <div className="review-section">
             <Col md={6}>
               <h2 className="review-title">Reviews</h2>
               {product?.product?.reviews.length === 0 && (
@@ -294,9 +295,11 @@ const ProductScreen = ({ match, history }) => {
                 </ListGroup.Item>
               </ListGroup>
             </Col>
+            </div>
           </Row>
         </>
       )}
+      <Footer/>
     </>
   );
 };

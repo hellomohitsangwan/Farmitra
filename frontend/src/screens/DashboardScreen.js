@@ -21,9 +21,9 @@ const DashboardScreen = () => {
                 <div className="rect-details">
                   <div className="gap"></div>
                   <div className="heading">
-                    <p className="amt-title">Total Revenue</p>
+                    <p className="amt-title">Farmer's Dashboard</p>
                   </div>
-                  <div className="amount">$1299.67</div>
+                  {/* <div className="amount">$1299.67</div> */}
                 </div>
               </div>
             </div>
@@ -35,7 +35,7 @@ const DashboardScreen = () => {
                     <div className="heading">
                       <p>Products</p>
                     </div>
-                    <div className="amount">9</div>
+                    {/* <div className="amount">9</div> */}
                     <div className="dashArrow">
                       <Link to={"/admin/productlist"}>
                         <button className="dashBtn">
@@ -53,7 +53,7 @@ const DashboardScreen = () => {
                     <div className="heading">
                       <p>Orders</p>
                     </div>
-                    <div className="amount">3</div>
+                    {/* <div className="amount">3</div> */}
                     <div className="dashArrow">
                       <Link to={"/admin/orderlist"}>
                         <button className="dashBtn">
@@ -73,10 +73,10 @@ const DashboardScreen = () => {
                     <div className="heading">
                       <p>Recom</p>
                     </div>
-                    <div className="amount">3</div>
+                    {/* <div className="amount">3</div> */}
                     <div className="dashArrow1 ">
                       <Link to={"/recommendations"}>
-                        <button className="dashBtn">
+                        <button className="dashBtn3">
                           <img src={dashArrow} alt="" />
                         </button>
                       </Link>
@@ -91,7 +91,7 @@ const DashboardScreen = () => {
                     <div className="heading">
                       <p>Reviews</p>
                     </div>
-                    <div className="amount">2</div>
+                    {/* <div className="amount">2</div> */}
                     <div className="dashArrow">
                       <button className="dashBtn2">
                         <img src={dashArrow} alt="" />
@@ -107,7 +107,7 @@ const DashboardScreen = () => {
                     <div className="heading">
                       <p>Out of Stock</p>
                     </div>
-                    <div className="amount">5</div>
+                    {/* <div className="amount">5</div> */}
                   </div>
                 </div>
               </div>

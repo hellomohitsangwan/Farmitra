@@ -53,10 +53,11 @@
 
 .card-title a {
   color: #2e2e2e;
+  min-width: 180px;
 }
 
 .card-title a:hover {
-  color: #fa9c23;
+  color: #6d8b56;
   text-decoration: none;
 }
 
@@ -117,8 +118,8 @@
   height: 64px;
   margin: 8px;
   border-radius: 50%;
-  border: 6px solid #fa9c23;
-  border-color: #fa9c23 transparent;
+  border: 6px solid #6d8b56;
+  border-color: #6d8b56 transparent;
   animation: lds-dual-ring 1.2s linear infinite;
 }
 @keyframes lds-dual-ring {
@@ -222,11 +223,7 @@
   display: flex;
 }
 
-.card-text {
-  position: relative;
-  top: 8px;
-  right: -80px;
-}
+
 
 .kg {
   font-size: 12px;
@@ -299,5 +296,39 @@
 .rating-review{
   position: relative;
   top: 10px;
-  right: 15px;
+  right: 0px;
+}
+
+.recom-ul{
+  width: 400px !important;
+  height: 60px !important;
+  z-index: 9999999 !important;
+}
+.recom-span{
+  
+  font-weight: bold !important;
+}
+.recomP{
+  position: relative;
+  z-index: 999999 !important;
+  top: -20px;
+  right: -200px;
+
+}
+
+.avator{
+  z-index: inherit;
+  position: relative;
+  margin-left: 20px;
+  top: 15px;
+  border: none;
+  background: none;
+}
+
+.down{
+  margin-left: 5px;
+}
+
+.avatorImg{
+  margin-right:5px ;
 }

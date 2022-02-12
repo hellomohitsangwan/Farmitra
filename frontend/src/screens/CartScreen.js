@@ -14,6 +14,7 @@ import {
   Card,
 } from "react-bootstrap";
 import Message from "../components/Message";
+import Footer from "../components/Footer";
 
 const CartScreen = ({ match, location, history }) => {
   //match is to get routes in linked
@@ -161,6 +162,7 @@ const CartScreen = ({ match, location, history }) => {
         </Col>
       </Row>
     </div>
+    
   );
 };
 

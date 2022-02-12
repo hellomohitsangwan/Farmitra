@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import FormContainer from "../components/FormContainer";
 import { savePaymentMethod } from "../actions/cartActions";
 import CheckoutSteps from "../components/CheckoutSteps";
+import "./Screen.css"
 const PaymentScreen = ({ history }) => {
   const cart = useSelector((state) => state.cart);
 
@@ -61,7 +62,7 @@ const PaymentScreen = ({ history }) => {
             ></Form.Check>
           </Col>
         </Form.Group>
-        <Button type="submit" variant="primary" disabled={isdisabled}>
+        <Button className="cont" type="submit" variant="primary" disabled={isdisabled}>
           Continue
         </Button>
       </Form>

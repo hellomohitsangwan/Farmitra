@@ -5,6 +5,7 @@ import Product from "../components/Product";
 import { Col, Row } from "react-bootstrap";
 import { useEffect } from "react";
 import Loader from "../components/Loader";
+import Footer from "../components/Footer";
 
 const TopProductsScreen = () => {
   const [loading, setLoading] = useState(true);
@@ -53,6 +54,7 @@ const TopProductsScreen = () => {
           ))}
         </Row>
       )}
+      <Footer/>
     </>
   );
 };

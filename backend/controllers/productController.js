@@ -49,7 +49,6 @@ const getProductsOfFarmer = asyncHandler(async (req, res) => {
 export const getReviewOfFarmer = asyncHandler(async (req , res) => {
   const product = await Product.findById(req.body.id);
   if (product) {
-    await product.remove();
     res.json( product.reviews );
   } else {
     res.status(404);

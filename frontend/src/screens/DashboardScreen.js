@@ -93,9 +93,11 @@ const DashboardScreen = () => {
                     </div>
                     {/* <div className="amount">2</div> */}
                     <div className="dashArrow">
+                    <Link to={"/Reviews"}>
                       <button className="dashBtn2">
                         <img src={dashArrow} alt="" />
                       </button>
+                      </Link>
                     </div>
                   </div>
                 </div>

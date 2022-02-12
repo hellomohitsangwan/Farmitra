@@ -1231,3 +1231,7 @@ footer p {
   border: none;
   background-color: #6d8b56;
 }
+
+.alert{
+  max-width: 400px !important;
+}

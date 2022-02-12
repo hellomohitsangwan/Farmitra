@@ -959,7 +959,7 @@ footer p {
   right: -100px;
 }
 .cart-status {
-  z-index: 9999;
+  /* z-index: -9999; */
   position: relative;
   top: -60px;
   right: -330px;
@@ -1005,6 +1005,8 @@ footer p {
 }
 
 .checkout-btn {
+  z-index: 999999999 !important;
+  border: none;
   position: relative;
   right: -55px;
   font-size: 18px;

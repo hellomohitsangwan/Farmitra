@@ -20,8 +20,11 @@ import fileUpload from "express-fileupload";
 // const cloudinary = require("cloudinary");
 // import cookieVerifyRoute from "./routes/cookieVerifyRoute.js";
 // import cookieParser from "cookie-parser";
-
+import User from "./models/userModel.js";
+import Recommendation from "./models/recommendationModel.js";
 import { RAZORPAY_ID, RAZORPAY_SECRET } from "./secrets/razorpay.js";
+import Product from "./models/productModel.js";
+
 var razorpay = new Razorpay({
   key_id: RAZORPAY_ID,
   key_secret: RAZORPAY_SECRET,
@@ -39,7 +42,10 @@ cloudinary.config({
 });
 // app.use(cookieParser());
 connectDB();
-
+// app.get("/api/delete" , async(req , res) => {
+//   const ress = await Recommendation.deleteMany({});
+//   res.json(ress)
+// })
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
@@ -81,6 +87,9 @@ app.post("/api/razorpay", protect, async (req, res) => {
     // console.log(error);
   }
 });
+
+
+
 // app.use("/api", cookieVerifyRoute);
 
 //middleware routes

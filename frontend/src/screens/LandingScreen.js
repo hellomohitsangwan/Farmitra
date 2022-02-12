@@ -71,9 +71,9 @@ const LandingScreen = () => {
         >
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0" />
           <li className="nav-item">
-            <Link to={"/home"}>
+            <Link to={"/login"}>
               <a href="#" className="active">
-                Home
+                Sign In
               </a>
             </Link>
           </li>

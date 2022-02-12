@@ -28,6 +28,7 @@ const Header = () => {
           <img src={logo} alt="logo" className = "logo"/>
         </Link>
         <ul className='nav-links'>
+          <li><Link to='/'>About us</Link></li>
           <li><Link to='/topProducts'>Trending Products</Link></li>
           {/* <li><Link to='/about'>About</Link></li> */}
           {/* <li><Link to='/login'>SignIn</Link></li> */}

@@ -7,7 +7,7 @@ import windMill from "../images/windMillFinal.png";
 import farmer from "../images/front2.png";
 import plant from "../images/plant.gif";
 // import logo from "../images/logo1.svg";
-import mohit from "../images/0.png";
+import mohit from "../images/00.png";
 import vishal from "../images/2.png";
 import preyash from "../images/1.png";
 import akanksha from "../images/4.png";
@@ -52,9 +52,7 @@ const LandingScreen = () => {
       {/* <!-- --------------------------------------------------------- navbar----------------------------------------------- ---> */}
       <header className="navbar navbar-expand-lg navbar-dark bg-transparent navbar-custom">
         <logo className="#">
-          <a href="#">
-            {/* <img src={logo} width={"250px"}/> */}
-          </a>
+          <a href="#">{/* <img src={logo} width={"250px"}/> */}</a>
         </logo>
         <button
           className="navbar-toggler"
@@ -137,18 +135,17 @@ const LandingScreen = () => {
           <br />
           <p>
             Farmitra is the answer to this conundrum. We offer a platform for
-            farmers to connect with other organisations and sell their crops to
-            them. We are primarily interested in connecting farmers with
-            non-governmental organisations (NGOs) because NGOs can play an
-            important role in purchasing unsold crops from these farmers and
-            distributing them to the less fortunate. This model is similar to
-            the one in which NGOs collect leftover food from restaurants and
-            distribute it to the less fortunate. We are addressing the problem
-            of farmers while also delivering food to those in need in this way.
-            It's like if there's a scarcity of some materials in one location,
-            and those resources are so plentiful in another that they're
-            rotting; we operate as a channel and attempt to keep things in
-            balance.
+            farmers to connect with other organisations and sell their crops. We
+            are primarily interested in connecting farmers with non-governmental
+            organisations (NGOs) because NGOs can play an important role in
+            purchasing unsold crops from these farmers and distributing them to
+            the less fortunate. This model is similar to the one in which NGOs
+            collect leftover food from restaurants and distribute it to the less
+            fortunate. We are addressing the problem of farmers while also
+            delivering food to those in need in this way. It's like if there's a
+            scarcity of some materials in one location, and those resources are
+            so plentiful in another that they're rotting; we operate as a
+            channel and attempt to keep things in balance.
           </p>
           <br />
         </div>

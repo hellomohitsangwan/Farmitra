@@ -1137,7 +1137,7 @@ footer p {
   font-size: 24px;
   font-weight: 700;
 }
-.postBtn:disabled{
+.postBtn:disabled {
   background-color: #6d8b56;
 }
 .postBtn {
@@ -1147,7 +1147,7 @@ footer p {
   margin-left: 10px;
 }
 .postBtn:hover {
- background-color: #6e9451;
+  background-color: #6e9451;
 }
 
 .review-details {
@@ -1167,67 +1167,66 @@ footer p {
   font-weight: 600;
 }
 
-
-.signUp{
+.signUp {
   margin-top: 20px;
   border: none;
   background-color: #6d8b56;
 }
 
-.signUp:hover{
+.signUp:hover {
   background-color: #6e9451;
 }
 
-.form-gap{
+.form-gap {
   margin-top: 20px;
 }
 
-.login{
+.login {
   color: #6d8b56;
 }
 
-.signBtn{
+.signBtn {
   border: none;
   background-color: #6d8b56;
 }
-.signBtn:hover{
+.signBtn:hover {
   border: none;
   background-color: #6e9451;
 }
 
-.card-text{
+.card-text {
   position: relative;
   right: -50px;
 }
 
-.recommedation{
+.recommedation {
   position: relative;
   right: 0px;
   top: 0px;
 }
 
-.review-section{
+.review-section {
   position: relative;
   right: -100px;
 }
 
-.my-2{
+.my-2 {
   border: none;
   background-color: #6d8b56;
 }
-.my-2:hover{
+.my-2:hover {
   background-color: #6e9451;
 }
 
-.cont{
+.cont {
   border: none;
   background-color: #6d8b56;
 }
-.cont:disabled{
+.cont:disabled {
   border: none;
   background-color: #6d8b56;
 }
-.cont:hover{
+.cont:hover {
   border: none;
   background-color: #6d8b56;
 }

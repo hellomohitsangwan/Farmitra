@@ -4,7 +4,7 @@ import project_3 from "../../../../components/Images/project_3.svg";
 import "./index.css";
 export const Section2 = () => {
   return (
-    <div className="w-11/12 mx-auto mt-12 md:mt-80">
+    <div className="w-11/12 mx-auto mt-12 md:mt-70">
       <div className="grid grid-flex-row lg:grid-cols-2 grid-cols-1">
         <div className="hc_card mx-auto mb-16 pb-8">
           <img src={project_3}></img>

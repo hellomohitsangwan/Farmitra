@@ -1,0 +1,35 @@
+.hc-button {
+  width: fit-content; 
+  border-radius: 22.1875px;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 22.1875px;
+  line-height: 33px;
+  text-align: center;
+}
+.hc-button__button {
+  padding: 16px 32px;
+}
+.hc-button__primary {
+  background: #fbfcff;
+  border: 1.775px solid #0070e4;
+  box-sizing: border-box;
+  color: #0070e4;
+}
+.hc-button__secondary {
+  background: #0070e4;
+  border: 1.775px solid #0070e4;
+  box-sizing: border-box;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 560px) {
+  .hc-button {
+    font-size: 12px;
+    line-height: 12px;
+  }
+  .hc-button__button {
+    padding: 16px 12px;
+  }
+}

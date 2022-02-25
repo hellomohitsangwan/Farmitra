@@ -27,18 +27,20 @@ import RecomScreen from "./screens/RecomScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import TopProductsScreen from "./screens/TopProductsScreen";
 import ReviewScreen from "./screens/ReviewScreen";
+import Page1 from "./screens/Page1/index";
+import LandingHomeScreen from "./screens/LandingHomeScreen";
 const App = () => {
   return (
     <Router>
       <main>
         {/* <Container> */}
         <Route path="/" component={LandingScreen} exact />
-        <Header />
-        <Route path="/topProducts" component={TopProductsScreen}/>
-        <Route path="/Reviews" component={ReviewScreen}/>
-        <Route path="/recommendations" component={RecomScreen}/>
+        {/* <Header /> */}
+        <Route path="/topProducts" component={TopProductsScreen} />
+        <Route path="/Reviews" component={ReviewScreen} />
+        <Route path="/recommendations" component={RecomScreen} />
         <Route path="/product/:id" component={ProductScreen} />
-        <Route path="/dashboard" component={DashboardScreen}/>
+        <Route path="/dashboard" component={DashboardScreen} />
         <Route path="/test" component={Test} />
         <Route path="/shipping" component={ShippingScreen} />
         <Route path="/payment" component={PaymentScreen} />
@@ -56,11 +58,13 @@ const App = () => {
         <Route path="/admin/orderlist" component={OrderListScreen} />
         <Route path="/search/:keyword" component={HomeScreen} />
         <Route path="/home" component={HomeScreen} exact />
+        <Route path="/page1" component={Page1} />
         {/* </Container> */}
         <MainFooter />
       </main>
       {/* <MainFooter /> */}
       <Route path="/LandingScreen" component={LandingScreen} exact />
+      <Route path="/LandingHomeScreen" component={LandingHomeScreen} exact />
     </Router>
   );
 };

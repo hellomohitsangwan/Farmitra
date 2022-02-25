@@ -1,6 +1,13 @@
-main {
-  min-height: 80vh;
+@font-face {
+  font-family: "Morganite Bold";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Morganite Bold"), url("Morganite-Bold.woff") format("woff");
 }
+
+/* main {
+  min-height: 80vh;
+} */
 h3 {
   padding: 1rem 0;
 }
@@ -15,7 +22,8 @@ h2 {
 .rating span {
   margin: 0.1rem;
 }
-::-moz-selection { /* Code for Firefox */
+::-moz-selection {
+  /* Code for Firefox */
   color: rgb(0, 0, 0);
   background: #545855;
 }

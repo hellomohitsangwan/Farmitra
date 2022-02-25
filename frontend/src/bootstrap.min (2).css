@@ -172,14 +172,15 @@ p {
   margin-top: 0;
   margin-bottom: 1rem;
 }
+/*
 abbr[data-bs-original-title],
 abbr[title] {
-  /* -webkit-text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
   text-decoration: underline dotted;
   cursor: help;
-  -webkit-text-decoration-skip-ink: none;
-  text-decoration-skip-ink: none; */
+  -webkit-text-decoration-skip-ink:
 }
+*/
 address {
   margin-bottom: 1rem;
   font-style: normal;

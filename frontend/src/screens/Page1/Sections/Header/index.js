@@ -39,7 +39,7 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div className=" w-10/12 grid grid-cols-2 sm:grid-cols-4 mx-auto gap-4">
+      <div className=" w-10/12 grid grid-cols-1 sm:grid-cols-4 mx-auto gap-auto">
         <Button type="button" variant="secondary">
           Web delvelopment
         </Button>{" "}

@@ -46,7 +46,7 @@ const Product = ({ product }) => {
           {/* <div className="gap"></div> */}
           <div className="added">
             <div className="dot"></div>
-            <p className="fresh">Fresh and Healthy</p>
+            <p className="fresh">{product.description}</p>
           </div>
           {/* <div className="gap"></div> */}
           {/* <div className="gap"></div> */}

@@ -22,13 +22,19 @@ import axios from "axios";
 import "./Screen.css";
 import avator from "../assets/avator.svg";
 import Footer from "../components/Footer";
+import Alert from "../utils/Alert"
 
 const ProductScreen = ({ match, history }) => {
+  const [alert, setAlert] = useState({ show: false, msg: "", type: "" });
+  const showAlert = (show = false, type = "", msg = "") => {
+    setAlert({ show, type, msg });
+  };
   const [qty, setQty] = useState(1);
   const [rating, setRating] = useState(0);
   const [comment, setComment] = useState("");
   const [recom, setRecom] = useState("");
   const [rl, srl] = useState(false);
+  
 
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
@@ -68,9 +74,12 @@ const ProductScreen = ({ match, history }) => {
         { recommendation: recom, farmer_id: product.user._id },
         config
       );
+      // const alertz = data.response.msg
+      
       console.log(data.response.msg);
     } catch (error) {
-      console.log(error.response.data.message);
+      showAlert(true, "danger", "You have alredy posted the recommendation (Only one recommendation per farmer is allowed!)");
+      // console.log(error.response.data.message);
     }
     srl(false);
   };
@@ -207,6 +216,7 @@ const ProductScreen = ({ match, history }) => {
             </div>
             <div className="post-recom">
               <Col>
+              {alert.show && <Alert {...alert} removeAlert={showAlert} />}
                 <p className="recom-title">Post Recommendation For Farmer</p>
                 <input type="text" onChange={(e) => setRecom(e.target.value)} />
                 <Button

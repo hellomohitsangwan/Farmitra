@@ -26,6 +26,7 @@ import LandingScreen from "./screens/LandingScreen";
 import RecomScreen from "./screens/RecomScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import TopProductsScreen from "./screens/TopProductsScreen";
+import ReviewScreen from "./screens/ReviewScreen";
 const App = () => {
   return (
     <Router>
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/" component={LandingScreen} exact />
         <Header />
         <Route path="/topProducts" component={TopProductsScreen}/>
+        <Route path="/Reviews" component={ReviewScreen}/>
         <Route path="/recommendations" component={RecomScreen}/>
         <Route path="/product/:id" component={ProductScreen} />
         <Route path="/dashboard" component={DashboardScreen}/>

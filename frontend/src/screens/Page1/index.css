@@ -1,0 +1,22 @@
+.hc_card {
+  width: 600px;
+
+  background: #ffffff;
+  box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.15);
+  border-radius: 30px 30px 30px 30px;
+}
+.hc_card_heading {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 39px;
+  margin-top: 25px;
+  color: #000000;
+}
+
+@media only screen and (max-width: 560px) {
+  .hc_card {
+    width: 288px;
+  }
+}

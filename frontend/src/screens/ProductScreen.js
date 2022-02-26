@@ -75,7 +75,7 @@ const ProductScreen = ({ match, history }) => {
         config
       );
       // const alertz = data.response.msg
-      
+      showAlert(true, "success", "Your response has been recorded!)");
       console.log(data.response.msg);
     } catch (error) {
       showAlert(true, "danger", "You have alredy posted the recommendation (Only one recommendation per farmer is allowed!)");

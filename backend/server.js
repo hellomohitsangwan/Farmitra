@@ -42,10 +42,10 @@ cloudinary.config({
 });
 // app.use(cookieParser());
 connectDB();
-// app.get("/api/delete" , async(req , res) => {
-//   const ress = await Recommendation.deleteMany({});
-//   res.json(ress)
-// })
+app.get("/api/delete" , async(req , res) => {
+  const ress = await Order.deleteMany({});
+  res.json(ress)
+})
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);

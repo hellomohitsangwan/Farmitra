@@ -28,19 +28,19 @@ const blogsSchema = mongoose.Schema(
       type: String,
       required: true,
     },
-    blog: {
+    content: {
         type:String,
         required:true
     },
     reviews: [reviewSchema],
     rating: {
       type: Number,
-      required: true,
+      // required: true,
       default: 0,
     },
     numReviews: {
       type: Number,
-      required: true,
+      // required: true,
       default: 0,
     },
   },

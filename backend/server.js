@@ -6,6 +6,7 @@ import connectDB from "./config/db.js";
 import productRoutes from "./routes/productRoutes.js";
 import userRoutes from "./routes/userRoutes.js";
 import orderRoutes from "./routes/orderRoutes.js";
+import blogRoutes from "./routes/blogRoutes.js";
 import recommendationRoutes from "./routes/recommendationRoutes.js"
 import { notFound, errorHandler } from "./middleware/errorMiddleware.js";
 import { protect } from "./middleware/authMiddleware.js";
@@ -52,6 +53,7 @@ app.use("/api/orders", orderRoutes);
 app.use("/api/upload", uploadRoutes);
 app.use("/api/recom" , recommendationRoutes);
 app.use("/api/chatbot" , chatBotRoutes)
+app.use("/api/blogs",blogRoutes);
 const __dirname = path.resolve();
 app.use("/uploads", express.static(path.join(__dirname, "/uploads")));
 if (process.env.NODE_ENV === "production") {

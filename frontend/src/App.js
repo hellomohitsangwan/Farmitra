@@ -27,7 +27,7 @@ import RecomScreen from "./screens/RecomScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import TopProductsScreen from "./screens/TopProductsScreen";
 import ReviewScreen from "./screens/ReviewScreen";
-import Page1 from "./screens/Page1/index";
+import News from "./screens/Page1/index";
 import LandingHomeScreen from "./screens/LandingHomeScreen";
 const App = () => {
   return (
@@ -58,7 +58,7 @@ const App = () => {
         <Route path="/admin/orderlist" component={OrderListScreen} />
         <Route path="/search/:keyword" component={HomeScreen} />
         <Route path="/home" component={HomeScreen} exact />
-        <Route path="/page1" component={Page1} />
+        <Route path="/news" component={News} />
         {/* </Container> */}
         <MainFooter />
       </main>
